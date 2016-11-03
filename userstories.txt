@@ -1,0 +1,15 @@
+1] As a client, I should be able to send in-app messages to my website visitors. So that, I can make better promotions of my products.
+
+2] As a client, I should be able to check and compare performance of my website after adding the product. So that I can make better decisions.
+
+3] As a client, I should be able to provide guided tours to my website visitors. So that, my website becomes more acceptable.
+
+4] As a client, I should be able to provide in-app surveys to my visitors. So that, I can receive better responses. 
+
+5] As a client, I should be able to highlight parts of my website which are normally ignored by the visitors, so that I can have better utilization of the functionalities of my website. 
+
+6] As a website user, I should be able to receive in-app messages instead of emails. So that, I can react faster.
+
+7] As a website user, I should be able to respond to smart in-app surveys. So that, I can react faster.
+
+8] As a website user, I should be able to receve guided tours in the website. So that, I can have better interaction.
