@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="angular/angularhelpmyusers.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   
+   <!--Anchor Pointer-->
+   	<style type="text/css">
+	 a:hover {
+  	 cursor:pointer;
+ 	}
+	</style>
+	
+	<!--Corousel play-->
+		<meta charset="utf-8">
+ 	 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<style>
+  				.carousel-inner > .item > img,
+  				.carousel-inner > .item > a > img {
+      			 width: 25%;
+      			 margin: auto;
+  				}
+  			</style>
+		
+		<script type="text/javascript">
+  			$(document).ready(function() {
+    		$('.carousel').carousel({
+      		interval: 1000
+    		})
+  			});
+		</script>
+		
+		
+		
+   
+  </head>
+  
+  <body ng-app="helpmyusers" ng-controller="helpmyusers">
+ 
+ 	<div>
+ 		<div class = "container-fluid">
+			<div class = "row">
+ 				<a style="font-size : 300% ; color: #000000; ">HelpMyUsers</a>
+ 				<a style="font-size : 300% ; float: right ; color : #000000">Login</a>
+ 			</div>
+ 			
+ 			
+ 			<div class = "row" style = "margin-top:100px;">
+ 				
+ 				<div class="container">
+  				<br>
+  					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    				<!-- Indicators -->
+    				<ol class="carousel-indicators">
+      					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      					<li data-target="#myCarousel" data-slide-to="1"></li>
+      					<li data-target="#myCarousel" data-slide-to="2"></li>
+      					<li data-target="#myCarousel" data-slide-to="3"></li>
+      					<li data-target="#myCarousel" data-slide-to="4"></li>
+    				</ol>
+
+   					 <!-- Wrapper for slides -->
+    				<div class="carousel-inner" role="listbox">
+      					<div class="item active">
+        					<h1 style = "text-align : center ; font-size : 75px">Improve User Engagement</h1>
+      					</div>
+
+     					<div class="item">
+        					<h1 style = "text-align : center ; font-size : 75px">Improve Free Trial Conversion</h1>
+      					</div>
+    
+					     <div class="item">
+					        <h1 style = "text-align : center ; font-size : 75px">Improve User Retention</h1>
+					     </div>
+    				</div>
+
+    				<!-- Left and right controls -->
+    					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      					<span class="sr-only">Previous</span>
+    					</a>
+    					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+     	 				<span class="sr-only">Next</span>
+    					</a>
+  					</div>
+				</div>
+				
+				
+				<div class = "row" style = "margin-top:40px;">
+					<div class = "col-md-4">
+						
+					</div>
+				
+					<div class = "col-md-2">
+						<input type = "button" name = "demoRequest" ng-model = "demoRequest" value = "Request A Demo" class="btn btn-primary center-block"></input>
+					</div>
+					
+					<div class = "col-md-2">
+						<input type = "button" name = "freeTrial" ng-model = "freeTrial" value = "Free Trial" class="btn btn-primary center-block"></input>
+					</div>
+					
+					<div class = "col-md-4">
+						
+					</div>
+				</div>
+				
+ 			</div>
+ 			
+ 			<div style = "margin-top:100px;">
+ 				<div class = "row" style = "margin-top:30px;">
+ 					<h1>Guided Tours</h1>
+ 					
+ 					<div class = "col-md-6">
+						<h2>In-App Guided Tours</h2>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<input type = "button" name = "guidedTours" ng-model = "guidedTours" value = "See How It Works" class="btn btn-primary center-block"></input>
+					</div>
+					
+					<div class = "col-md-6">
+						<img src="/images/guidedtour.gif" alt="Chania" style = "width : 100%">
+					</div>
+ 					
+ 				</div>
+ 				
+ 				<div class = "row" style = "margin-top:30px;">
+ 					<h1>Messages</h1>
+ 						
+ 					<div class = "col-md-6">
+						<h2>In-App Messages</h2>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<input type = "button" name = "message" ng-model = "message" value = "See How It Works" class="btn btn-primary center-block"></input>
+					</div>
+					
+					<div class = "col-md-6">
+						
+					</div>
+			
+ 				</div>
+ 				
+ 				<div class = "row" style = "margin-top:30px;">
+ 					<h1>Surveys</h1>
+ 					
+ 					<div class = "col-md-6">
+						<h2>In-App Surveys</h2>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<input type = "button" name = "surveys" ng-model = "surveys" value = "See How It Works" class="btn btn-primary center-block"></input>
+					</div>
+					
+					<div class = "col-md-6">
+						
+					</div>
+					
+					
+ 				</div>
+ 				
+ 				<div class = "row" style = "margin-top:30px;">
+ 					<h1>Callouts</h1>
+ 					
+ 					<div class = "col-md-6">
+						<h2>In-App Callouts</h2>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						<p>hhfdkjshfsdkjlfhldsjh</p>
+						
+						<input type = "button" name = "callout" ng-model = "callout" value = "See How It Works" class="btn btn-primary center-block"></input>
+					</div>
+					
+					<div class = "col-md-6">
+						<img src="/images/callout.gif" alt="Chania" style = "width : 100%">
+					</div>
+						
+ 				</div>
+ 			</div>
+ 			
+ 			
+ 			<div class = "row" style = "margin-top:100px;">
+ 				<h1 style = "text-align : center">Our Clients</h1>
+ 				
+ 				
+ 				
+ 			</div>
+ 			
+ 			
+ 			
+ 			<div class = "row" style = "margin-top:100px;">
+ 				<div class = "col-md-3">
+ 					<h3>About Us</h3>
+ 						<a style="font-size : 125%">Who we are?</a></br>
+ 						<a style="font-size : 125%">Visit Us</a></br>	
+ 						<a style="font-size : 125%">Like us on Facebook</a></br>
+ 						<a style="font-size : 125%">Follow us on twitter</a></br>
+ 				</div>
+ 				
+ 				<div class = "col-md-3">
+ 					<h3>Pricing</h3>
+ 					<a style="font-size : 125%">Contact a representative</a></br>
+ 					<a style="font-size : 125%">Check our plans</a></br>
+ 					<a style="font-size : 125%">Request a quote</a></br>
+ 				</div>
+ 				
+ 				<div class = "col-md-3">
+ 					<h3>Use Cases</h3>
+ 					<a style="font-size : 125%">Guided Tours</a></br>
+ 					<a style="font-size : 125%">Messages</a></br>
+ 					<a style="font-size : 125%">Surveys</a></br>
+ 					<a style="font-size : 125%">Callouts</a></br>
+ 				</div>
+ 				
+ 				<div class = "col-md-3">
+ 					<h3>Careers</h3>
+ 					<a style="font-size : 125%">Job Opportunities</a></br>
+ 					<a style="font-size : 125%">Send Your Resume</a></br>	
+ 				</div>
+ 			</div>
+ 			
+ 			
+ 		</div>
+	</div> 	
+ 	
+ 
+  </body>
+
+</html>
