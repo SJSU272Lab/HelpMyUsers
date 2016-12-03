@@ -1,4 +1,13 @@
+var webshot = require('webshot');
+
+
+
+
 exports.loadHomePage = function(req,res)
 {
-	res.render('HomePage', { title: 'HomePage' });
+	webshot("amazon.com", "amazon.png", function(argument) {
+		console.log("Inside Webshot module");
+	});
+
+	res.render('messages', { title: 'HomePage' });
 };
