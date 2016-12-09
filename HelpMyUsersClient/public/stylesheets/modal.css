@@ -1,0 +1,246 @@
+.modal .modal-dialog {
+	width: 450px;
+	min-height: 250px;
+	padding: 32px 32px 0px 32px;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 65px auto;
+}
+.modal .modal-content {
+    border-radius: 2px;
+    background-color: #fff;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-bottom: 20px;
+}
+.modal .modal-body {
+	padding: 0;
+}
+
+.modal .modal-body a {
+	color: #008489; 
+}
+/*login modal css*/
+.login-options-wrap .login-option {
+	width: 100%;
+	height: 64px;
+	padding: 20px 27px;
+	margin-bottom: 6px;
+    border-color: #c4c4c4!important;
+    border: 1px solid;
+    border-radius: 4px;
+    background: white;
+    color: #484848;
+    font-size: 16px;
+    position: relative;
+}
+.login-options-wrap .login-option:hover{
+	border-color: #aaa !important;
+    color: #484848 !important;
+}
+.login-options-wrap .login-option.fb {
+	border-color: #3B5998;
+    background-color: #3B5998;
+    color: #fff;
+}
+.login-options-wrap .login-option.fb:hover {
+    border-color: #4568b2 !important;
+    background-color: #4568b2;
+    color: #fff !important;
+}
+.login-options-wrap .login-option .media-icon {
+	position: absolute;
+	left: 15px;
+	top: 20px;
+}
+.or-wrapper {
+    background: none;
+    height: 34px;
+    position: relative;
+    text-align: center;
+}
+.or-wrapper .or-text {
+	background-color: #fff;
+    display: inline-block;
+    padding: 6px 8px;
+    color: #767676;
+}
+.or-wrapper hr{
+    margin: -16px auto 10px;
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #dce0e0;
+}
+.modal-body input[type="email"], .modal-body input[type="password"], .modal-body input[type="text"] {
+	width: 100%;
+	height: 64px;
+	background-image: url(../images/modal-images/input-sprite.png);
+    background-repeat: no-repeat;
+    background-position: right 9px;
+    border-radius: 2px;
+    border: 1px solid #aaa;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 16px;
+    padding: 10px 35px 10px 10px;
+    -webkit-background-size: 40px 171px;
+    -moz-background-size: 40px 171px;
+    -o-background-size: 40px 171px;
+    background-size: 40px 171px;
+    margin-bottom: 6px;
+}
+.modal-body input.email {
+	background-position: right -28px;
+}
+.modal-body input.pwd{
+    background-position: right -79px;
+    margin-bottom: 12px;
+}
+.remember-forgot {
+	margin-bottom: 6px;
+}
+.remember-forgot .remember-checkbox {
+	float: left;
+	display: block;
+	margin-bottom: 6px;
+	padding-top: 0;
+    padding-bottom: 0;
+    font-weight: normal;
+}
+.modal-body input[type="checkbox"] {
+	border: 1px solid #aaa;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #484848;
+    position: relative;
+    -webkit-appearance: none;
+    height: 1.25em;
+    width: 1.25em;
+    margin-bottom: -0.25em;
+    margin-top: 0;
+    margin-right: 5px;
+    vertical-align: top;
+}
+.modal-body input[type="checkbox"]:checked:before {
+	content: "\2713";
+    position: absolute;
+    font-size: 0.85em;
+    left: 1px;
+    text-align: center;
+    width: 1.25em;
+    color: #008489;
+}
+.remember-forgot .forgot-link {
+	color: #008489;
+}
+.modal-body .modal-btn-primary {
+	font-size: 16px;
+	line-height: 1.43;
+	padding: 20px 0;
+    border-color: #ff5a5f;
+    background-color: #ff5a5f;
+    color: #fff;
+    font-weight: normal;
+    display: block;
+    white-space: normal;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+.modal-body .modal-btn-primary:focus, .modal-body .modal-btn-primary:hover	{
+	border-color: #ff7e82;
+    background-color: #ff7e82;
+    color: #fff;
+}
+.custom-footer {
+	margin-top: 10px;
+	border-top: 1px solid #dce0e0;
+	padding-top: 15px;
+}
+.custom-footer a,.custom-footer span {
+	font-weight: 16px;
+	line-height: 34px;
+}
+.custom-footer .btn-small {
+	border: 1px solid #ff5a5f;
+    color: #ff5a5f;
+    font-weight: normal;
+    padding: 7px 21px;
+    font-size: 14px;
+    background-color: #fff;
+    display: inline-block;
+    margin-bottom: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 1.43;
+}
+.modal-body .terms-n-condn,.modal-body .terms-n-condn a {
+	font-size: 11.9px;
+	line-height: 17px;
+}
+.modal-body .terms-n-condn {
+	margin: 20px 0 10px;
+}
+
+.modal-body .signup-form-wrapper input[type="text"],
+.modal-body .signup-form-wrapper input[type="password"],
+.modal-body .signup-form-wrapper input[type="email"]{
+    width: 100%;
+    height: 45px;
+}
+.signup-form-wrapper input.name-field {
+    background-position: right 11px;
+}
+.signup-form-wrapper input.mail-field {
+    background-position: right -38px;
+}
+.signup-form-wrapper input.pwd-field {
+    background-position: right -88px;
+}
+/*common select box*/
+.modal-body select {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 2em;
+    -webkit-appearance: none;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #484848;
+    background: #fff url(../images/modal-images/select-caret.png);
+    background-repeat: no-repeat;
+    background-position: 90% 13px;
+}
+.modal-body .birthday-wrapper {
+    margin-top: 18px;
+}
+.modal-body select.month-list {
+    width: 35%;
+}
+.modal-body select.day-list {
+    width: 25%;
+    margin: 0 11px;
+}
+.modal-body select.year-list {
+    width: 32%;
+}
+.modal-body .coupons-promotions-wrap {
+    margin: 20px 0;
+}
+.modal-body .coupons-promotions-wrap label{
+    font-weight: normal;
+}

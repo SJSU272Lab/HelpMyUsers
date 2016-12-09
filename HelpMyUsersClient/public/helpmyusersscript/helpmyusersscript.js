@@ -1,4 +1,56 @@
 
+
+
+
+
+function writeJS(){
+
+    
+
+    var temp = "<ol id='joyRideTipContent'>"+
+      "<li data-class='so-awesome' data-text='Next' class='custom'>"+
+        "<h2>Stop #1</h2>"+
+        "<p>Message 1</p>"+
+      "</li>"+
+      "<li data-id='numero2' data-button='Next' data-options='tipLocation:top;tipAnimation:fade'>"+
+        "<h2>Stop #2</h2>"+
+        "<p>Message 2</p>"+
+      "</li>"+
+      "<li data-id='numero3' data-button='Next' data-options='tipLocation:right'>"+
+        "<h2>Stop #3</h2>"+
+        "<p>Message 3</p>"+
+      "</li>"+
+      "<li data-button='Next'>"+
+        "<h2>Stop #4</h2>"+
+        "<p>Message 4</p>"+
+        
+      "</li>"+
+      "<li data-class='someclass' data-button='Next' data-options='tipLocation:right'>"+
+        "<h2>Stop #4.5</h2>"+
+        "<p>Message 5</p>"+
+      "</li>"+
+      "<li data-id='numero5' data-button='Close'>"+
+        "<h2>Stop #5</h2>"+
+        "<p>Message 5</p>"+
+      "</li>"+
+    "</ol>";
+
+
+
+
+    document.write(temp);
+}
+writeJS();
+
+
+
+
+
+
+
+
+
+
 (function( window, undefined ) {
 
 // Can't do this because several apps including ASP.NET trace
@@ -11031,3 +11083,18 @@ window.Modernizr = (function( window, document, undefined ) {
 
 })(this, this.document);
 ;
+
+
+
+      $(window).load(function() {
+        $('#joyRideTipContent').joyride({
+          autoStart : true,
+          postStepCallback : function (index, tip) {
+          if (index == 2) {
+            $(this).joyride('set_li', false, 1);
+          }
+        },
+        modal:true,
+        expose: true
+        });
+      });

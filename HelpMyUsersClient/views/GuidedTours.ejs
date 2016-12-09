@@ -2,141 +2,83 @@
 <html>
   
   <head>
-   		
-   		<meta charset="utf-8" />
-    	<title>Guided Tours</title>
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    	<link rel='stylesheet' href="/stylesheets/joyride-2.1.css"/>
-    	<link rel='stylesheet' href="/stylesheets/demo-style.css"/>
-    	<link rel='stylesheet' href="/stylesheets/mobile.css"/>
-    	<!-- <script src="scripts/jquery-1.10.1.js"></script>
-    	<script src="scripts/jquery.cookie.js"></script>
-    	<script src="scripts/jquery.joyride-2.1.js"></script>
-    	<script src="scripts/modernizr.mq.js"></script> -->
-
-      <script src="helpmyusersscript/helpmyusersscript.js"></script>
-
-
+  
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/modal.css' />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="angular/angularhelpmyusers.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <!-- <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' /> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   
+   <!--Anchor Pointer-->
+    <style type="text/css">
+   a:hover {
+     cursor:pointer;
+  }
+  </style>
+  
+  <!--Corousel play-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="bower_components/angular/angular.min.js"></script> -->
+      <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap-tpls.min.js‌​"></script> -->
+      <style>
+          .carousel-inner > .item > img,
+          .carousel-inner > .item > a > img {
+             width: 25%;
+             margin: auto;
+          }
+        </style>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('.carousel').carousel({
+          interval: 1500
+        })
+        });
+    </script>
+   
   </head>
   
-  <body ng-app="helpmyusers" ng-controller="helpmyusers">
-
-
-  		<div class="container">
-		    <div class="row">
-		    	<div class="twelve columns">
-		    	<h1>Guided Tours</h1>
-        		<hr>
-      		</div>
-
-   	 	</div>
-
-    	<br><br>
-
-    <div class="row">
-
-      <div class="twelve columns">
-        <h2 id="numero1" class="so-awesome">Random 1</h2>
-        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
-      </div>
-
-    </div>
-
-    <br><br><br><br>
-
-    <div class="row">
-      <div class="twelve columns">
-        <h3 id="numero3">Random 2</h3>
-        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
-      </div>
-    </div>
-
-   <br><br><br><br>
-
-   <div class="row">
-      <div class="twelve columns">
-        <h3 id="numero2">Random 3</h3>
-        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
-      </div>
-    </div>
-
-    <div class="row" id="hidden">
-
-      <div class="twelve columns">
-        <h3 class="someclass">Random 4</h3>
-        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
-      </div>
-    </div>
-
-    <div class="row">
-
-      <div class="twelve columns">
-        <h3 class="someclass">Random 5</h3>
-        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
-      </div>
-    </div>
-
-    <br><br><br><br>
-
-    <div class="row">
-      <div class="twelve columns">
-        <h4>Random 6</h4>
-        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
-      </div>
-    </div>
-
-    <br><br><br><br>
-
-  </div>
-      <!-- Tip Content -->
-    <ol id="joyRideTipContent">
-      <li data-class="so-awesome" data-text="Next" class="custom">
-        <h2>Stop #1</h2>
-        <p>Message 1</p>
-      </li>
-      <li data-id="numero2" data-button="Next" data-options="tipLocation:top;tipAnimation:fade">
-        <h2>Stop #2</h2>
-        <p>Message 2</p>
-      </li>
-      <li data-id="numero3" data-button="Next" data-options="tipLocation:right">
-        <h2>Stop #3</h2>
-        <p>Message 3</p>
-      </li>
-      <li data-button="Next">
-        <h2>Stop #4</h2>
-        <p>Message 4</p>
-      </li>
-      <li data-class="someclass" data-button="Next" data-options="tipLocation:right">
-        <h2>Stop #4.5</h2>
-        <p>Message 5</p>
-      </li>
-      <li data-id="numero5" data-button="Close">
-        <h2>Stop #5</h2>
-        <p>Message 5</p>
-      </li>
-    </ol>
-
-    <!-- Run the plugin -->
-
-    <script>
-      $(window).load(function() {
-        $('#joyRideTipContent').joyride({
-          autoStart : true,
-          postStepCallback : function (index, tip) {
-          if (index == 2) {
-            $(this).joyride('set_li', false, 1);
-          }
-        },
-        modal:true,
-        expose: true
-        });
-      });
-    </script>
-
-
-
+  <body ng-app="helpmyusers" ng-controller="guidedTours">
  
+  <div>
+    <div class = "container-fluid">
+      <div class = "row">
+                <div class="col-md-3">
+                  <label>Enter website URL:</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" ng-model="url">
+                </div>
+                <div class="col-md-3">
+                  <button class="btn btn-primary" ng-click="loadURL();">GO</button>      
+                  <button class="btn btn-primary" ng-click="publish();">Publish</button>      
+                </div>
+      </div>
+      
+      
+      <div class = "row" style = "margin-top:100px;">
+        
+      <img src="{{imagePath}}" height="100%" width="100%" ng-click="setMessage()">
+      
+    </div>
+  </div>  
+  </div>
+ 
+
+<script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
   </body>
 
 </html>

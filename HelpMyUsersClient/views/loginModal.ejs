@@ -1,0 +1,35 @@
+<!-- 
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+</div> -->
+<div class="modal-body" id="modal-body">
+<!--    <div class="width-100 login-options-wrap">
+   		<button class="text-center login-option fb" ><img class="media-icon" src="public/images/modal-images/fb.png">Log in with Facebook</button>
+   		<button class="text-center login-option google" ><img class="media-icon" src="public/images/modal-images/google.png">Log in with Google</button>	
+   </div>
+   <div class="or-wrapper text-center">
+   		<span class="or-text bold-font">or</span>
+   		<hr></hr>
+   </div> -->
+   <div class="login-form">
+   		<form name="loginForm" novalidate>
+   			<input type="text" name = "email" ng-model="id" class="email" placeholder="ID" required>
+
+   			<input name = "Header" ng-model = "header" type="text"  placeholder="Header" required>
+
+            <input name = "Meaasge" ng-model = "message" type="text"  placeholder="Message" required>
+   			
+   			
+
+   			<button class="modal-btn-primary" ng-click="add();">Save</button>
+            
+   		</form>
+   		<!-- <div class="custom-footer dont-have-account">
+   			<a href="#." class="">Don't have an account?</a>
+   			<button ng-click="vm.signUp()" class="pull-right btn-small">Sign up</button>
+   		</div> -->
+   </div>
+</div>
+<!-- <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>      
+</div> -->

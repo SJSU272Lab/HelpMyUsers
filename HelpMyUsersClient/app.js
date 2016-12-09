@@ -9,7 +9,11 @@ var express = require('express')
   , path = require('path');
 var mongo = require("./routes/mongo");
 var mainLogic = require('./routes/mainLogic');
+
+var guidedTours = require('./routes/guidedTours');
+
 var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
+
 
 var app = express();
 
@@ -30,6 +34,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', mainLogic.loadHomePage);
+app.post('/loadURL', guidedTours.loadImage);
 
 mongo.connect(mongoConnectURL, function(){
   console.log('Connected to mongo at: ' + mongoConnectURL);
@@ -37,3 +42,8 @@ mongo.connect(mongoConnectURL, function(){
   console.log('Express server listening on port ' + app.get('port'));
   }); 
 });
+
+
+
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/')));
