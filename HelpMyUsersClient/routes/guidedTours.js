@@ -21,4 +21,38 @@ res.status(200).json({"result":"/images/google.com.jpg"});
 
 }
 
+
+var publishGuidedTour = function(req, res) {
+	var tourData = [];
+	tourData.push(req.param("data"));
+	var i=0;
+
+	console.log(tourData+"khdsvsd");
+
+	var writeData = "function writeJS(){var temp = <ol id='joyRideTipContent'>";
+
+	//tourData.foreach();
+
+	for(i=0; i<tourData.length; i++)
+	{
+		if(i<tourData.length-1)
+		{
+			writeData = writeData+"<li data-id='"+tourData[i].id+"' data-button='Next' data-options='tipLocation:top;tipAnimation:fade'>";
+			writeData = writeData+"<h2>"+tourData[i].header+"</h2>";
+			writeData = writeData+"<p>"+tourData[i].message+"</p></li>";
+		}
+		else
+		{
+			writeData = writeData+"<li data-id='"+tourData[i].id+"' data-button='Close' data-options='tipLocation:top;tipAnimation:fade'>";
+			writeData = writeData+"<h2>"+tourData[i].header+"</h2>";
+			writeData = writeData+"<p>"+tourData[i].message+"</p></li></ol>";
+		}
+	}
+
+	console.log(writeData);
+	res.status(200);
+}
+
+
+exports.publishGuidedTour = publishGuidedTour;
 exports.loadImage = loadImage;
