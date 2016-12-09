@@ -7,8 +7,14 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path');
+var mongo = require("./routes/mongo");
 var mainLogic = require('./routes/mainLogic');
+<<<<<<< HEAD
 var guidedTours = require('./routes/guidedTours');
+=======
+var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
+
+>>>>>>> 26c6763be9ecdb0aa6062d06614641ffcecf52ef
 var app = express();
 
 // all environments
@@ -30,8 +36,11 @@ if ('development' == app.get('env')) {
 app.get('/', mainLogic.loadHomePage);
 app.post('/loadURL', guidedTours.loadImage);
 
-http.createServer(app).listen(app.get('port'), function(){
+mongo.connect(mongoConnectURL, function(){
+  console.log('Connected to mongo at: ' + mongoConnectURL);
+  http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
+  }); 
 });
 
 
