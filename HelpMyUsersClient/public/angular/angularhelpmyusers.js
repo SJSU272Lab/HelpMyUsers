@@ -7,6 +7,7 @@ app.controller('helpmyusers', function($scope, $http) {
 });
 
 var guidedTourData = [];
+
 app.controller("guidedTours", function($scope, $http, $uibModal){
 
 	//$scope.imagePath = "google.com.png";
@@ -23,10 +24,18 @@ app.controller("guidedTours", function($scope, $http, $uibModal){
 
 	$scope.publish = function() {
 		
+		$http.post("/publishGuidedTour", {"data":$scope.guidedTourDat}).
+		then(function() {
+			
+		});
 		
 		
 	}
 
+	var init = function() {
+		$scope.guidedTourData = guidedTourData;
+	}
+	init();
 
 	$scope.setMessage = function() {
 
@@ -54,10 +63,13 @@ app.controller("guidedTours", function($scope, $http, $uibModal){
 
 app.controller("MessageModalController", function($scope, $http, $uibModalInstance){
 
+
+	//guidedTourData = [];
+
 	$scope.add = function() {
 		var temp = {
 			"id":$scope.id,
-			"heading":$scope.header,
+			"header":$scope.header,
 			"message":$scope.message
 		};
 

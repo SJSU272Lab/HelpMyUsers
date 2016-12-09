@@ -9,5 +9,5 @@ exports.loadHomePage = function(req,res)
 		console.log("Inside Webshot module");
 	});*/
 
-	res.render('Message', { title: 'Message' });
+	res.render('GuidedTours', { title: 'Message' });
 };

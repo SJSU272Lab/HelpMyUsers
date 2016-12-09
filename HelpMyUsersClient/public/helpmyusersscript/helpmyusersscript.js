@@ -5,9 +5,8 @@
 
 function writeJS(){
 
-    
 
-    var temp = "<ol id='joyRideTipContent'>"+
+  var temp = "<ol id='joyRideTipContent'>"+
       "<li data-class='so-awesome' data-text='Next' class='custom'>"+
         "<h2>Stop #1</h2>"+
         "<p>Message 1</p>"+
