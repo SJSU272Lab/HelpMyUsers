@@ -22,9 +22,6 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, '/')));
-
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
@@ -36,3 +33,8 @@ app.post('/loadURL', guidedTours.loadImage);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
+
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/')));
