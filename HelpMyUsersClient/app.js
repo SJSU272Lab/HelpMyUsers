@@ -8,7 +8,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 var mainLogic = require('./routes/mainLogic');
-
+var guidedTours = require('./routes/guidedTours');
 var app = express();
 
 // all environments
@@ -22,12 +22,16 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/')));
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
 app.get('/', mainLogic.loadHomePage);
+app.post('/loadURL', guidedTours.loadImage);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
