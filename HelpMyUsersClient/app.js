@@ -9,12 +9,12 @@ var express = require('express')
   , path = require('path');
 var mongo = require("./routes/mongo");
 var mainLogic = require('./routes/mainLogic');
-<<<<<<< HEAD
+
 var guidedTours = require('./routes/guidedTours');
-=======
+
 var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
 
->>>>>>> 26c6763be9ecdb0aa6062d06614641ffcecf52ef
+
 var app = express();
 
 // all environments
