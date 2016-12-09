@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+   		
+   		<meta charset="utf-8" />
+    	<title>Guided Tours</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    	<link rel='stylesheet' href="/stylesheets/joyride-2.1.css"/>
+    	<link rel='stylesheet' href="/stylesheets/demo-style.css"/>
+    	<link rel='stylesheet' href="/stylesheets/mobile.css"/>
+    	<!-- <script src="scripts/jquery-1.10.1.js"></script>
+    	<script src="scripts/jquery.cookie.js"></script>
+    	<script src="scripts/jquery.joyride-2.1.js"></script>
+    	<script src="scripts/modernizr.mq.js"></script> -->
+
+      <script src="helpmyusersscript/helpmyusersscript.js"></script>
+
+
+  </head>
+  
+  <body ng-app="helpmyusers" ng-controller="helpmyusers">
+
+
+  		<div class="container">
+		    <div class="row">
+		    	<div class="twelve columns">
+		    	<h1>Guided Tours</h1>
+        		<hr>
+      		</div>
+
+   	 	</div>
+
+    	<br><br>
+
+    <div class="row">
+
+      <div class="twelve columns">
+        <h2 id="numero1" class="so-awesome">Random 1</h2>
+        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
+      </div>
+
+    </div>
+
+    <br><br><br><br>
+
+    <div class="row">
+      <div class="twelve columns">
+        <h3 id="numero3">Random 2</h3>
+        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
+      </div>
+    </div>
+
+   <br><br><br><br>
+
+   <div class="row">
+      <div class="twelve columns">
+        <h3 id="numero2">Random 3</h3>
+        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
+      </div>
+    </div>
+
+    <div class="row" id="hidden">
+
+      <div class="twelve columns">
+        <h3 class="someclass">Random 4</h3>
+        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="twelve columns">
+        <h3 class="someclass">Random 5</h3>
+        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
+      </div>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="row">
+      <div class="twelve columns">
+        <h4>Random 6</h4>
+        <p>RandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomTextRandomText</p>
+      </div>
+    </div>
+
+    <br><br><br><br>
+
+  </div>
+      <!-- Tip Content -->
+    <ol id="joyRideTipContent">
+      <li data-class="so-awesome" data-text="Next" class="custom">
+        <h2>Stop #1</h2>
+        <p>Message 1</p>
+      </li>
+      <li data-id="numero2" data-button="Next" data-options="tipLocation:top;tipAnimation:fade">
+        <h2>Stop #2</h2>
+        <p>Message 2</p>
+      </li>
+      <li data-id="numero3" data-button="Next" data-options="tipLocation:right">
+        <h2>Stop #3</h2>
+        <p>Message 3</p>
+      </li>
+      <li data-button="Next">
+        <h2>Stop #4</h2>
+        <p>Message 4</p>
+      </li>
+      <li data-class="someclass" data-button="Next" data-options="tipLocation:right">
+        <h2>Stop #4.5</h2>
+        <p>Message 5</p>
+      </li>
+      <li data-id="numero5" data-button="Close">
+        <h2>Stop #5</h2>
+        <p>Message 5</p>
+      </li>
+    </ol>
+
+    <!-- Run the plugin -->
+
+    <script>
+      $(window).load(function() {
+        $('#joyRideTipContent').joyride({
+          autoStart : true,
+          postStepCallback : function (index, tip) {
+          if (index == 2) {
+            $(this).joyride('set_li', false, 1);
+          }
+        },
+        modal:true,
+        expose: true
+        });
+      });
+    </script>
+
+
+
+ 
+  </body>
+
+</html>
