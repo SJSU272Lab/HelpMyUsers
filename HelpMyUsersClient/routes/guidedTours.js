@@ -23,8 +23,11 @@ res.status(200).json({"result":"/images/google.com.jpg"});
 
 
 var publishGuidedTour = function(req, res) {
-	var tourData = req.param("data");
+	var tourData = [];
+	tourData.push(req.param("data"));
 	var i=0;
+
+	console.log(tourData+"khdsvsd");
 
 	var writeData = "function writeJS(){var temp = <ol id='joyRideTipContent'>";
 
