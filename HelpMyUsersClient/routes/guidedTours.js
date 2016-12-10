@@ -6,7 +6,12 @@ var loadImage = function(req,res) {
 	var url = req.param("url");
 	console.log("in webshot"+url);
 
-	webshot(url,"./public/images/"+url+".jpg",{windowSize:{ width: 1920, height: 1080 }, shotSize:{ width: 'all', height: 'all' }, quality:3000} , function(argument) {
+/*	webshot(url,"./public/images/"+url+".jpg",{windowSize:{ width: 1920, height: 1080 }, shotSize:{ width: 'all', height: 'all' }, quality:150} , function(argument) {
+		console.log("Inside Webshot module");
+
+	});*/
+
+	webshot(url,"./public/images/temp.jpg",{windowSize:{ width: 1920, height: 1080 }, shotSize:{ width: 'all', height: 'all' }, quality:150} , function(argument) {
 		console.log("Inside Webshot module");
 
 	});
@@ -14,9 +19,10 @@ var loadImage = function(req,res) {
 
 	setTimeout(function(){
 		  console.log('test');
-		  	var temp = "/images/"+url+".jpg";
+		  	//var temp = "/images/"+url+".jpg";
+		  	var temp = "/images/temp.jpg";
 			res.status(200).json({"result":temp});
-		}, 9 * 1000);  
+		}, 13 * 1000);  
 //res.status(200).json({"result":"/images/google.com.jpg"});
 
 

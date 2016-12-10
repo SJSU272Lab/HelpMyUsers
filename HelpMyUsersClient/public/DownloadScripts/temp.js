@@ -1,4 +1,4 @@
-function writeJS(){var temp = "<ol id='joyRideTipContent'><li data-id='chodu pavan' data-button='Next' data-options='tipLocation:top;tipAnimation:fade'><h2>bkjbcab</h2><p>kbkbkbkh</p></li><li data-id='khkvhvj' data-button='Next' data-options='tipLocation:top;tipAnimation:fade'><h2>vjjvjvjv</h2><p>jvhjhv</p></li><li data-id='jvgjvgv' data-button='Close' data-options='tipLocation:top;tipAnimation:fade'><h2>vjvjgvjvg</h2><p>vjgvgvg</p></li></ol>";    document.write(temp);
+function writeJS(){var temp = "<ol id='joyRideTipContent'><li data-id='kkgkhvhv' data-button='Next' data-options='tipLocation:top;tipAnimation:fade'><h2>hvhvvhvh</h2><p>gghghg</p></li><li data-id='khhvvhVHVVH' data-button='Close' data-options='tipLocation:top;tipAnimation:fade'><h2>vhkvv</h2><p>vhv</p></li></ol>";    document.write(temp);
 }
 writeJS();
 
