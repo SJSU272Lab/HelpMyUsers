@@ -1,4 +1,4 @@
-function writeJS(){var temp = "<ol id='joyRideTipContent'><li data-id='kkgkhvhv' data-button='Next' data-options='tipLocation:top;tipAnimation:fade'><h2>hvhvvhvh</h2><p>gghghg</p></li><li data-id='khhvvhVHVVH' data-button='Close' data-options='tipLocation:top;tipAnimation:fade'><h2>vhkvv</h2><p>vhv</p></li></ol>";    document.write(temp);
+function writeJS(){var temp = "<ol id='joyRideTipContent'><li data-id='jgvcgjc' data-button='Close' data-options='tipLocation:top;tipAnimation:fade'><h2>hh</h2><p>hhy</p></li></ol>";    document.write(temp);
 }
 writeJS();
 
