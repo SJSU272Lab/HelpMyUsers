@@ -648,9 +648,6 @@
             //"use strict";
             $('#feature').parallax("50%", 0.5, true);
             $('#video').parallax("50%", 0.5, true);
-            $('#subscription').parallax("50%", 0.5, true);
-            $('#review').parallax("50%", 0.5, true);
-            $('#download').parallax("50%", 0.5, true);
             $('#footer').parallax("50%", 0.5, true);
         });
     </script>
@@ -721,9 +718,9 @@
             // To add the marker to the map, use the 'map' property
             var image = 'assets/images/map_icon_3.png';
             var marker = new google.maps.Marker({
-                position: losAngeles,
+                position: SJSU,
                 map: map,
-                title: "GRAPE App Store!",
+                title: "",
                 icon: image
             });
 
