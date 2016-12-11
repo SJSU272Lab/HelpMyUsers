@@ -1,0 +1,8 @@
+node_modules
+bower_components
+
+./HelpMyUsersClient/node_modules
+./HelpMyUsersClient/bower_components
+
+/HelpMyUsersClient/node_modules
+/HelpMyUsersClient/bower_components

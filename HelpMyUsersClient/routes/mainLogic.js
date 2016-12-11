@@ -10,6 +10,7 @@ exports.loadHomePage = function(req,res)
 	});*/
 
 	res.render('GuidedTours', { title: 'Message' });
+
 };
 
 

@@ -67,6 +67,8 @@ app.controller('analytics', function($scope, $http) {
 });
 
 var guidedTourData = [];
+var downloadURL="";
+
 app.controller("guidedTours", function($scope, $http, $uibModal){
 
 	//$scope.imagePath = "google.com.png";
@@ -82,11 +84,36 @@ app.controller("guidedTours", function($scope, $http, $uibModal){
 	}
 
 	$scope.publish = function() {
-		
+		console.log($scope.guidedTourData);
+		$http.post("/publishGuidedTour", {"tourData":$scope.guidedTourData}).
+		then(function(response) {
+
+			downloadURL = response.data.result;
+
+			 var modalInstance = $uibModal.open({
+ 			 animation : true,
+		     templateUrl: './views/downloadScript.ejs',
+	      	 size: "md",
+	      	 controller:'DownloadModalController',
+	      	 backdrop : true
+	    });
+
+	     modalInstance.result.then(function (userData) {
+
+		     
+		    }, function (err) {
+		      
+		});
+		});
 		
 		
 	}
 
+
+	var init = function() {
+		$scope.guidedTourData = guidedTourData;
+	}
+	init();
 
 	$scope.setMessage = function() {
 
@@ -117,10 +144,13 @@ app.controller("guidedTours", function($scope, $http, $uibModal){
 
 app.controller("MessageModalController", function($scope, $http, $uibModalInstance){
 
+
+	//guidedTourData = [];
+
 	$scope.add = function() {
 		var temp = {
 			"id":$scope.id,
-			"heading":$scope.header,
+			"header":$scope.header,
 			"message":$scope.message
 		};
 
@@ -129,5 +159,26 @@ app.controller("MessageModalController", function($scope, $http, $uibModalInstan
 		console.log(guidedTourData);
 		$uibModalInstance.close();
 	}
+
+});
+
+
+app.controller("DownloadModalController", function($scope, $http, $uibModalInstance){
+
+
+	//guidedTourData = [];
+	$scope.downloadURL = downloadURL;
+/*	$scope.add = function() {
+		var temp = {
+			"id":$scope.id,
+			"header":$scope.header,
+			"message":$scope.message
+		};
+
+		guidedTourData.push(temp);
+
+		console.log(guidedTourData);
+		$uibModalInstance.close();
+	}*/
 
 });
