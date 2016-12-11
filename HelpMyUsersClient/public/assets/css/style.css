@@ -662,6 +662,13 @@ section.banner-carousel {
     color: #fff;
 }
 
+.banner-head {
+    font-size: 70px;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+}
+
 .banner-carousel p,
 .banner p {
     color: #fff;
