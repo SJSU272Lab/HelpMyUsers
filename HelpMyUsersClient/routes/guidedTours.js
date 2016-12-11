@@ -11,7 +11,7 @@ var loadImage = function(req,res) {
 
 	});*/
 
-	webshot(url,"./public/images/temp.jpg",{windowSize:{ width: 1920, height: 1080 }, shotSize:{ width: 'all', height: 'all' }, quality:150} , function(argument) {
+	webshot(url,"./public/images/temp.jpg",{windowSize:{ width: 1400, height: 900 }, shotSize:{ width: 'window', height: 'window' }, quality:150} , function(argument) {
 		console.log("Inside Webshot module");
 
 	});
