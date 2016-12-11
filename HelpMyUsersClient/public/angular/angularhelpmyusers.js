@@ -3,6 +3,13 @@ var app = angular.module("helpmyusers", ['ui.bootstrap', 'nvd3']);
 app.controller('helpmyusers', function($scope, $http) {
 	
 	$scope.trial = 20;
+
+
+
+	
+
+
+	
 	
 });
 
@@ -119,7 +126,7 @@ app.controller("guidedTours", function($scope, $http, $uibModal){
 
  		var modalInstance = $uibModal.open({
  			 animation : true,
-		     templateUrl: './views/loginModal.ejs',
+		     templateUrl: './views/SetMessageModal.ejs',
 	      	 size: "md",
 	      	 controller:'MessageModalController',
 	      	 backdrop : true

@@ -45,6 +45,10 @@ app.post('/captureClick', analytics.captureClicksData);
 app.post('/loadURL', guidedTours.loadImage);
 app.post('/publishGuidedTour', guidedTours.publishGuidedTour);
 
+app.get('/guidedTours', function(req,res) {
+		res.render('GuidedTour', { title: 'Message' });
+});
+
 mongo.connect(mongoConnectURL, function(){
   console.log('Connected to mongo at: ' + mongoConnectURL);
 /*  http.createServer(app).listen(app.get('port'), function(){
