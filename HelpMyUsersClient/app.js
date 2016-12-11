@@ -9,6 +9,7 @@ var express = require('express')
   , path = require('path');
 var mongo = require("./routes/mongo");
 var mainLogic = require('./routes/mainLogic');
+var analytics = require('./routes/analytics');
 
 var guidedTours = require('./routes/guidedTours');
 
@@ -37,6 +38,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', mainLogic.loadHomePage);
+app.get('/analytics', mainLogic.analytics);
+app.post('/clicksData', analytics.fetchClicksData);
+app.post('/captureClick', analytics.captureClicksData);
 app.post('/loadURL', guidedTours.loadImage);
 app.post('/publishGuidedTour', guidedTours.publishGuidedTour);
 

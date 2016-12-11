@@ -4,17 +4,31 @@
   <head>
   
     <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/modal.css' />
     
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="angular/angularhelpmyusers.js"></script>
+    <script src="helpmyusersscript/analytics.js"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-	<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-   
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <!-- <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' /> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+  <meta charset="utf-8">  <!-- it's important for d3.js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/d3/d3.js"></script>
+  <script src="bower_components/nvd3/build/nv.d3.js"></script> <!-- or use another assembly -->
+  <script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+  <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css">
+
+
+ <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
    <!--Anchor Pointer-->
    	<style type="text/css">
 	 a:hover {
@@ -104,11 +118,11 @@
 					</div>
 				
 					<div class = "col-md-2">
-						<input type = "button" name = "demoRequest" ng-model = "demoRequest" value = "Request A Demo" class="btn btn-primary center-block"></input>
+						<input id = "demoRequest" type = "button" name = "demoRequest" ng-model = "demoRequest" value = "Request A Demo" class="btn btn-primary center-block"></input>
 					</div>
 					
 					<div class = "col-md-2">
-						<input type = "button" name = "freeTrial" ng-model = "freeTrial" value = "Free Trial" class="btn btn-primary center-block"></input>
+						<input type = "button" id = "freeTrial" name = "freeTrial" ng-model = "freeTrial" value = "Free Trial" class="btn btn-primary center-block" ng-click = "captureClick"></input>
 					</div>
 					
 					<div class = "col-md-4">
@@ -130,7 +144,7 @@
 						<p>hhfdkjshfsdkjlfhldsjh</p>
 						<p>hhfdkjshfsdkjlfhldsjh</p>
 						<p>hhfdkjshfsdkjlfhldsjh</p>
-						<input type = "button" name = "guidedTours" ng-model = "guidedTours" value = "See How It Works" class="btn btn-primary center-block"></input>
+						<input type = "button" id = "guidedTours" name = "guidedTours" ng-model = "guidedTours" value = "See How It Works" class="btn btn-primary center-block"></input>
 					</div>
 					
 					<div class = "col-md-6">
@@ -150,7 +164,7 @@
 						<p>hhfdkjshfsdkjlfhldsjh</p>
 						<p>hhfdkjshfsdkjlfhldsjh</p>
 						<p>hhfdkjshfsdkjlfhldsjh</p>
-						<input type = "button" name = "message" ng-model = "message" value = "See How It Works" class="btn btn-primary center-block"></input>
+						<input type = "button" id = "message" name = "message" ng-model = "message" value = "See How It Works" class="btn btn-primary center-block"></input>
 					</div>
 					
 					<div class = "col-md-6">
@@ -170,7 +184,7 @@
 						<p>hhfdkjshfsdkjlfhldsjh</p>
 						<p>hhfdkjshfsdkjlfhldsjh</p>
 						<p>hhfdkjshfsdkjlfhldsjh</p>
-						<input type = "button" name = "surveys" ng-model = "surveys" value = "See How It Works" class="btn btn-primary center-block"></input>
+						<input type = "button" id = "surveys" name = "surveys" ng-model = "surveys" value = "See How It Works" class="btn btn-primary center-block"></input>
 					</div>
 					
 					<div class = "col-md-6">
@@ -192,7 +206,7 @@
 						<p>hhfdkjshfsdkjlfhldsjh</p>
 						<p>hhfdkjshfsdkjlfhldsjh</p>
 						
-						<input type = "button" name = "callout" ng-model = "callout" value = "See How It Works" class="btn btn-primary center-block"></input>
+						<input type = "button" id = "callouts" name = "callout" ng-model = "callout" value = "See How It Works" class="btn btn-primary center-block"></input>
 					</div>
 					
 					<div class = "col-md-6">
@@ -246,7 +260,6 @@
  			
  		</div>
 	</div> 	
- 	
  
   </body>
 
