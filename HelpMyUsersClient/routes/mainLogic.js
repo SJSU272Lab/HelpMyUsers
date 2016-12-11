@@ -1,4 +1,4 @@
-var webshot = require('webshot');
+//var webshot = require('webshot');
 
 
 
@@ -9,7 +9,7 @@ exports.loadHomePage = function(req,res)
 		console.log("Inside Webshot module");
 	});*/
 
-	res.render('GuidedTours', { title: 'Message' });
+	res.render('home_page', { title: 'Message' });
 
 };
 
