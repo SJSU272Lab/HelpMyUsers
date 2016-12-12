@@ -66,6 +66,7 @@ app.post('/loadURL', guidedTours.loadImage);
 app.post('/publishGuidedTour', guidedTours.publishGuidedTour);
 app.post('/setMessage', message.setMessage);
 app.post('/setSurvey', survey.setSurvey);
+app.post('/surveyData', analytics.getSurveyData);
 
 app.post('/login',login.login);
 app.post('/signUp',login.signUp);

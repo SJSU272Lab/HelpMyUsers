@@ -1,22 +1,16 @@
 <div class="modal-body" id="modal-body">
          
       <form name="signupform" novalidate>
-               <input type="text" name="firstname" ng-model="vm.user.firstname" placeholder="First name" class="name-field" required>
+               <input type="text" name="firstname" ng-model="firstname" placeholder="First name" class="name-field" required>
                
-               <input type="text" name="lastname" ng-model="vm.user.lastname" placeholder="Last name" class="name-field" required>
+               <input type="text" name="lastname" ng-model="lastname" placeholder="Last name" class="name-field" required>
                
-               <input type="email" name="email" ng-model="vm.user.email" placeholder="Email address" class="mail-field" required>
+               <input type="email" name="email" ng-model="email" placeholder="Email address" class="mail-field" required>
                
-               <input type="password" name="password" ng-model = "vm.user.password" placeholder="Create a Password" class="pwd-field" required>
-               
-               <div class="birthday-wrapper">
-                  <p class="bold-font">Birthday</p>
-                  <span><input type="date" name = "birthdate" ng-model="vm.user.birthdate" class="form-control check-in-box"  placeholder="birthdate" ng-change="vm.initflag()" required/></span>
-
-               </div>
+               <input type="password" name="password" ng-model = "password" placeholder="Create a Password" class="pwd-field" required>
             
             <div class="login-options-wrap">
-               <button type = "button" class="modal-btn-primary login-option" ng-click="vm.ok()">Sign up</button>
+               <button type = "button" class="modal-btn-primary login-option" ng-click="ok()">Sign up</button>
             </div>
 
       </form>

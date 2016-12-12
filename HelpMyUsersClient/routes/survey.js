@@ -5,10 +5,6 @@ var mongo = require("./mongo");
 var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
 
 
-
-
-
-
 exports.saveSurvey = function(req, res) {
 	//console.log("in save survey"+req.body[0]);
 	var key;

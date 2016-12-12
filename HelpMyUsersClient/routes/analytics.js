@@ -108,4 +108,52 @@ exports.fetchClicksData = function(req,res)
 };
 
 
+exports.getSurveyData = function(req, res) {
+	console.log("survey data");
+	
+	var owner_id = "test";	
+
+	mongo.connect(mongoConnectURL, function(connection){
+		console.log("connection received "+connection);
+		
+		console.log('Connected to mongo at: ' + mongoConnectURL);
+		var coll = mongo.collection('surveyCollection');		//collection data in coll
+		
+		coll.find({email : owner_id}, {json : 1}).toArray(function(err, user){
+			
+			if (user) 
+			{
+				var ratingArray = [];
+				console.log("success");
+				console.log("survey data "+user);
+
+				console.log("data 1"+user[0].json);
+
+				for(var i = 0 ; i < user.length ; i++)
+				{
+					var dataArray = user[i].json.split(':');
+					var lastIndex = dataArray.length-1;
+					console.log("Rating "+dataArray[lastIndex]);
+					var rating = dataArray[lastIndex].charAt(1);
+					rating = parseInt(rating);
+ 
+					console.log("rating "+rating);
+					ratingArray.push(rating);
+				}
+
+				console.log(ratingArray);
+
+				res.send(ratingArray);
+			} 
+			
+			else 
+			{
+				console.log("failure");
+			}
+		});
+	});
+
+}
+
+
 exports.updateClicks = updateClicks;

@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>HelpMyUsers</title>
-    <meta name="description" content="GRAPE App landing Page by Codepassenger">
-    <meta name="author" content="CodePassenger">
 
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,7 +88,7 @@
 
 </head>
 
-<body ng-app="helpmyusers" ng-controller="test">
+<body ng-app="helpmyusers" ng-controller="analytics">
 
             <div class="contact">
 
@@ -101,7 +99,7 @@
                                 <a href="/"><img src="../public/assets/images/logo.png" alt="gigninga"></a>
                             </div>
                             <div class="col-md-4" style="padding-left: 2px; border-collapse: 0px">
-                                <h3 class="banner-dash" style="color:#0aabe1; font-size: 50px; text-align: left;">HelpMyUsers</h3>
+                                <h3 class="banner-dash" style="color:#0aabe1; font-size: 40px; text-align: left;">HelpMyUsers</h3>
                             </div>
                             <div class="col-md-7" style="padding-left: 2px; border-collapse: 0px">
                                 <h3 style="color:#3ec6ef; text-align: right; ">Hi User</h3>
@@ -110,49 +108,42 @@
                         </div>
                     </div>
 
-                        <div class="col-md-4" style="border-right: 3px solid  #3ec6ef;min-height: 520px" >
-                        <form class="form-horizontal" >
-                                
-                        <!--<span class="sub-head">we are here</span>-->
-                                <div class="title" style="padding-bottom: 100px;">
-                                    <h2>messages</h2>
+                        <div class="col-md-6" style="border-right: 3px solid  #3ec6ef;min-height: 400px" >
+                                <div class="title" style="padding-bottom: 10px;">
+                                    <h3>Clicks Per Page</h3>
+                                    <nvd3 options='clickCountOptions' data='clickCountData'></nvd3>
                                 </div>
-                                    
-                            </form>
-                            </div>
 
-                            <div class="col-md-4">
-                                <form class="form-horizontal" >
-                                
-                        <!--<span class="sub-head">we are here</span>-->
-                                    <div class="title" style="padding-bottom: 100px;">
-                                        <h2>surveys</h2>
+                        </div>
+
+                        <div class="col-md-3">
+                                    <div class="title" style="padding-bottom: 10px;border-right: 3px solid  #3ec6ef">
+                                        <h3>Less Visited Areas</h3>
+                                        <nvd3 options='websitedonutOptions' data='websiteDonutData'></nvd3>
                                     </div>
-                                    
-                                </form>
-                            </div>
 
-                            <div class="col-md-4" style="border-left: 3px solid  #3ec6ef;min-height:520px">
-                                <form class="form-horizontal" >
-                                
-                        <!--<span class="sub-head">we are here</span>-->
-                                <div class="title" style="padding-bottom: 150px;">
-                                    <h2>Call outs</h2>
-                                </div>
-                                   
-                            </form>
-                            </div>
 
-                        </form>
+                        </div>
+
+                        <div class="col-md-3">
+                                    <div class="title" style="padding-bottom: 10px;">
+                                        <h3>Your Website Ratings</h3>
+                                        <nvd3 options='surveydonutOptions' data='donutData'></nvd3>
+                                    </div>
+
+
+                        </div>
+
                     </div>
-                    <div class="form-group" style="padding-top: 8px; padding-left: 30px; padding-right: 30px">
+
+                    <div class="form-group" style="padding-top: 4px; padding-left: 30px; padding-right: 30px">
                                         <div class="span-form">
                                             <input type="submit" style="font-size: 40px" ng-click="" class="btn btn-block" value="Guided Tours">
                                         </div>
                                         <div class="span-form">
                                             <input type="submit" style="font-size: 40px"  ng-click="" class="btn btn-block" value="Test">
                                         </div>
-                </div>
+                    </div>
                 
             </div>
         
