@@ -21,10 +21,11 @@ exports.login = function(req, res)
 			{
 				console.log("success");
 				console.log(user);
-				res.send(user);
 				req.session.username = username;
 				console.log(req.session.username);
-				console.log(username);	
+				console.log(username);
+				res.send(user);
+
 			} 
 			
 			else 

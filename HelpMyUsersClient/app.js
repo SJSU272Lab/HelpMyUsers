@@ -31,7 +31,7 @@ app.use(expressSession({
   secret: 'team31',
   resave: false,  //don't save session if unmodified
   saveUninitialized: false, // don't create session until something stored
-  duration: 30 * 60 * 1000,    
+  duration: 30 * 60 * 1000,
   activeDuration: 5 * 60 * 1000,
   store: new mongoStore({
     url: mongoConnectURL
