@@ -65,7 +65,26 @@ app.controller('LoginModalController', function($scope, $http, $uibModalInstance
 });
 
 
-app.controller('SignupModalController', function($scope){
+app.controller('SignupModalController', function($scope, $uibModalInstance, $http){
+
+	$scope.ok = function()
+	{
+		var firstname = $scope.firstname;
+		var lastname = $scope.lastname;
+		var username = $scope.email;
+		var password = $scope.password
+
+		console.log(username+password);
+		$uibModalInstance.close();
+
+
+		$http.post("/signUp", {"firstname" : firstname, "lastname" : lastname, "username":username, "password": password}).
+		then(function(response) {
+
+			console.log("response received "+response);
+
+		});	
+	}
 
 });
 

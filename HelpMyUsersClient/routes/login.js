@@ -37,5 +37,33 @@ exports.login = function(req, res)
 
 exports.signUp = function(req, res)
 {
-	
+	var firstname = req.body.firstname;
+	var lastname = req.body.lastname;
+	var username = req.body.username;
+	var password = req.body.password;
+
+	console.log("signUp "+req.body.username);
+
+	mongo.connect(mongoConnectURL, function(connection){
+		console.log("connection received "+connection);
+		
+		console.log('Connected to mongo at: ' + mongoConnectURL);
+		var coll = mongo.collection('usercollection');		//collection data in coll
+		
+		coll.insert({firstname : firstname, lastname : lastname, username : username, password : password}, function(err, user){
+			
+			if (user) 
+			{
+				console.log("success");
+				console.log(user);
+				res.send(user);	
+			} 
+			
+			else 
+			{
+				console.log("failure");
+			}
+		});
+	});
+
 }
