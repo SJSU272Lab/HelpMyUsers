@@ -18,7 +18,7 @@ exports.setMessage = function(req, res) {
 
 	for(i = 0 ; i < messageData.length ; i++)
 	{
-		var initData = "setInterval(function(){message"+i+"();}, 5000);function message"+i+"(){";
+		var initData = "setTimeout(function(){message"+i+"();}, 5000);function message"+i+"(){";
 		var messageText = "var win_cnt = '<div>"+messageData[i]+"</div>';";
 		var postData = "vex.defaultOptions.className = 'vex-theme-default';vex.open({content: win_cnt});}";
 		finalScript = finalScript + initData+messageText+postData;
