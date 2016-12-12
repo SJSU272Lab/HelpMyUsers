@@ -1,18 +1,73 @@
 var app = angular.module("helpmyusers", ['ui.bootstrap', 'nvd3']);
 
-app.controller('helpmyusers', function($scope, $http) {
+app.controller('helpmyusers', function($scope, $http, $uibModal) {
+
+	$scope.openLoginModal = function(){
+		console.log("here");
+
+				var modalInstance = $uibModal.open({
+		 			 animation : true,
+				     templateUrl: 'views/loginModal.html',
+			      	 size: "md",
+			      	 controller:'LoginModalController',
+			      	 controllerAs:"vm",
+			      	 backdrop : true
+			    });
+
+	     	 modalInstance.result.then(function (userData) {
+		     user = userData;
+		     console.log("userData",userData);
+		    });
+	}
 	
-	$scope.trial = 20;
+	$scope.openSignupModal = function(){
+		
+		var modalInstance = $uibModal.open({
+		 			 animation : true,
+				     templateUrl: 'views/signupModal.html',
+			      	 size: "md",
+			      	 controller:'SignupModalController',
+			      	 controllerAs:"vm",
+			      	 backdrop : true
+			    });
 
+	     	 modalInstance.result.then(function (userData) {
+		     vm.user = userData;
+		     console.log("userData",vm.userData);
+		    });
 
-
-	
-
-
-	
+	}
 	
 });
 
+
+
+app.controller('LoginModalController', function($scope, $http, $uibModalInstance){
+
+	$scope.ok = function()
+	{
+		var username = $scope.email;
+		var password = $scope.password
+
+		console.log(username+password);
+		$uibModalInstance.close();
+
+
+		$http.post("/login", {"username":username, "password": password}).
+		then(function(response) {
+
+			console.log("response received "+response);
+
+		});	
+
+	}
+
+});
+
+
+app.controller('SignupModalController', function($scope){
+
+});
 
 app.controller('analytics', function($scope, $http) {
 

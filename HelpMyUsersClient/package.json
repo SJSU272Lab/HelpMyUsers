@@ -47,6 +47,7 @@
     "string_decoder": "^0.10.31",
     "util-deprecate": "^1.0.2",
     "vex-dialog": "^1.0.6",
-    "webshot": "^0.18.0"
+    "webshot": "^0.18.0",
+    "connect-mongo" : "*"
   }
 }
