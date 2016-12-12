@@ -10,6 +10,7 @@ var express = require('express')
 var mongo = require("./routes/mongo");
 var mainLogic = require('./routes/mainLogic');
 var analytics = require('./routes/analytics');
+var callout = require('./routes/callout');
 
 var guidedTours = require('./routes/guidedTours');
 var message = require('./routes/message');
@@ -49,6 +50,7 @@ app.post('/publishGuidedTour', guidedTours.publishGuidedTour);
 app.post('/setMessage', message.setMessage);
 app.post('/setSurvey', survey.setSurvey);
 app.post('/saveSurvey', survey.saveSurvey);
+app.post('/saveCallout', callout.saveCallout);
 
 
 app.get('/guidedTours', function(req,res) {
