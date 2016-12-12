@@ -48,6 +48,8 @@ app.post('/loadURL', guidedTours.loadImage);
 app.post('/publishGuidedTour', guidedTours.publishGuidedTour);
 app.post('/setMessage', message.setMessage);
 app.post('/setSurvey', survey.setSurvey);
+app.post('/saveSurvey', survey.saveSurvey);
+
 
 app.get('/guidedTours', function(req,res) {
 		res.render('GuidedTour', { title: 'Message' });
