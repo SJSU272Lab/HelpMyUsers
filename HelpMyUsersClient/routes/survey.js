@@ -12,7 +12,7 @@ exports.setSurvey = function(req, res) {
 
 	var surveyInterval = req.body.surveyData.timeDuration;
 
-	var initData = "window.onload=function(){setInterval(function(){survey();},"+surveyInterval+");";
+	var initData = "window.onload=function(){setTimeout(function(){survey();},"+surveyInterval+");";
 	var surveyData = "function survey(){vex.defaultOptions.className = 'vex-theme-flat-attack';vex.dialog.open({message: '"+surveyTitle+"',";
 	var fieldData = 'input: [';
 	var lastData = "].join(''),buttons: [$.extend({}, vex.dialog.buttons.YES, { text: 'Submit Survey' }),$.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })],";
@@ -22,11 +22,11 @@ exports.setSurvey = function(req, res) {
 	{
 		if(i == surveyfieldArray.length-1)
 		{
-			fieldData = fieldData + "'"+"<input name='"+surveyfieldArray[i]+"' type='text' placeholder = '"+surveyfieldArray[i]+"' required />'";
+			fieldData = fieldData + "'"+"<input name=\""+surveyfieldArray[i]+"\" type=\"text\" placeholder = \""+surveyfieldArray[i]+"\" required />'";
 		}
 		else
 		{
-			fieldData = fieldData + "'"+"<input name="+surveyfieldArray[i]+" type='text' placeholder = "+surveyfieldArray[i]+" required />',";
+			fieldData = fieldData + "'"+"<input name=\""+surveyfieldArray[i]+"\" type=\"text\" placeholder = \""+surveyfieldArray[i]+"\" required />',";
 		}
 	}
 

@@ -53,6 +53,14 @@ app.get('/guidedTours', function(req,res) {
 		res.render('GuidedTour', { title: 'Message' });
 });
 
+app.get('/messages', function(req,res) {
+		res.render('MessageOld', { title: 'Message' });
+});
+
+app.get('/surveys', function(req,res) {
+		res.render('Survey', { title: 'Message' });
+});
+
 mongo.connect(mongoConnectURL, function(){
   console.log('Connected to mongo at: ' + mongoConnectURL);
 /*  http.createServer(app).listen(app.get('port'), function(){
