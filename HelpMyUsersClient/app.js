@@ -10,15 +10,28 @@ var express = require('express')
 var mongo = require("./routes/mongo");
 var mainLogic = require('./routes/mainLogic');
 var analytics = require('./routes/analytics');
+var expressSession = require("express-session");
+var mongoStore = require("connect-mongo")(expressSession);
 
 var guidedTours = require('./routes/guidedTours');
 var message = require('./routes/message');
 var survey = require('./routes/survey');
+var login = require('./routes/login');
 
 var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
 
-
 var app = express();
+
+app.use(expressSession({
+  secret: 'team31',
+  resave: false,  //don't save session if unmodified
+  saveUninitialized: false, // don't create session until something stored
+  duration: 30 * 60 * 1000,    
+  activeDuration: 5 * 60 * 1000,
+  store: new mongoStore({
+    url: mongoConnectURL
+  })
+}));
 
 // all environments
 /*app.set('port', process.env.PORT || 3000);*/
@@ -48,6 +61,8 @@ app.post('/loadURL', guidedTours.loadImage);
 app.post('/publishGuidedTour', guidedTours.publishGuidedTour);
 app.post('/setMessage', message.setMessage);
 app.post('/setSurvey', survey.setSurvey);
+app.post('/login',login.login);
+app.post('/login',login.signUp);
 
 app.get('/guidedTours', function(req,res) {
 		res.render('GuidedTour', { title: 'Message' });
