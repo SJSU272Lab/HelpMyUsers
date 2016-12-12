@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HelpMyUsers</title>
-    <meta name="description" content="GRAPE App landing Page by Codepassenger">
-    <meta name="author" content="CodePassenger">
+    
 
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,7 +89,7 @@
 
 </head>
 
-<body ng-app="helpmyusers" ng-controller="test">
+<body ng-app="helpmyusers" ng-controller="mcsController">
 
             <div class="contact">
 
@@ -105,19 +104,19 @@
                                 </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Provide Message">
+                                            <input type="text" class="form-control" ng-model="message" placeholder="Provide Message to be displayed">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Delay in seconds">
+                                            <input type="text" class="form-control" ng-model="messageDuration" placeholder="Delay Interval in seconds">
                                         </div>
                                     </div>
                                 <div class="col-md-10">
                                     <div class="form-group" style="padding-top: 8px; padding-left: 30px;">
                                         <div class="span-form">
-                                            <input type="submit"  ng-click="" class="btn btn-block" value="Save">
+                                            <input type="submit"  ng-click="saveMessage();" class="btn btn-block" value="Save">
                                         </div>
                                         <div class="span-form">
-                                            <input type="submit"  ng-click="" class="btn btn-block" value="Publish">
+                                            <input type="submit"  ng-click="publishMessage();" ng-disabled="messagePublishFlag" class="btn btn-block" value="Publish">
                                         </div>
                                     </div>
                                 </div>
@@ -133,19 +132,22 @@
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Field names ( Separated with commas )">
+                                            <input type="text" class="form-control" ng-model="title" placeholder="Title">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Delay in seconds">
+                                            <input type="text" class="form-control" ng-model="fieldName" placeholder="Field ID names ( Separated with commas )">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" ng-model="timeDuration" placeholder="Delay interval in seconds">
                                         </div>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="form-group" style="padding-top: 8px; padding-left: 30px;">
                                             <div class="span-form">
-                                                <input type="submit"  ng-click="" class="btn btn-block" value="Save">
+                                                <input type="submit"  ng-click="saveSurvey();" class="btn btn-block" value="Save">
                                             </div>
                                             <div class="span-form">
-                                                <input type="submit"  ng-click="" class="btn btn-block" value="Publish">
+                                                <input type="submit"  ng-click="publishSurvey();" ng-disabled="surveyPublishFlag" class="btn btn-block" value="Publish">
                                             </div>
                                         </div>
                                     </div>
@@ -158,20 +160,20 @@
                                 
                         <!--<span class="sub-head">we are here</span>-->
                                 <div class="title" style="padding-bottom: 150px;">
-                                    <h2>Call outs</h2>
+                                    <h2>CallOuts</h2>
                                 </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Field names ( Separated with commas )">
+                                            <input type="text" class="form-control" ng-model="surveyfieldName" placeholder="Field ID names ( Separated with commas )">
                                         </div>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="form-group" style="padding-top: 8px; padding-left: 30px;">
                                             <div class="span-form">
-                                                <input type="submit"  ng-click="" class="btn btn-block" value="Save">
+                                                <input type="submit"  ng-click="saveCallout();" class="btn btn-block" value="Save">
                                             </div>
                                             <div class="span-form">
-                                                <input type="submit"  ng-click="" class="btn btn-block" value="Publish">
+                                                <input type="submit"  ng-click="publishCallout();" class="btn btn-block" value="Publish">
                                             </div>
                                         </div>
                                     </div>
@@ -218,9 +220,9 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
-    <script src="../public/assets/js/jquery.min.js"></script>
+<!--     <script src="../public/assets/js/jquery.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../public/assets/js/bootstrap.min.js"></script>
+<!--     <script src="../public/assets/js/bootstrap.min.js"></script>
     <script src="../public/assets/js/smoothscroll.js"></script>
     <script src="../public/assets/js/jquery.scrollTo.min.js"></script>
     <script src="../public/assets/js/jquery.localScroll.min.js"></script>
@@ -231,19 +233,19 @@
     <script src="../public/assets/js/jquery.parallax.js"></script>
     <script src="../public/assets/js/jquery.ajaxchimp.min.js"></script>
     <script src="../public/assets/js/matchMedia.js"></script>
-    <script src="../public/assets/js/script.js"></script>
+    <script src="../public/assets/js/script.js"></script> -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> -->
-    <script src="../public/assets/js/wow.js"></script>
-    <script src="../public/assets/js/easing.js"></script>
+<!--     <script src="../public/assets/js/wow.js"></script>
+    <script src="../public/assets/js/easing.js"></script> -->
 
-    <script>
+<!--     <script>
         $(document).ready(function() {
             //"use strict";
             $('#feature').parallax("50%", 0.5, true);
             $('#video').parallax("50%", 0.5, true);
             $('#footer').parallax("50%", 0.5, true);
         });
-    </script>
+    </script> -->
 
 
     <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>

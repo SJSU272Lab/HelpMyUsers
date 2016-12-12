@@ -135,6 +135,7 @@ var guidedTourData = [];
 var downloadURL="";
 var messageData = [];
 var surveyData = [];
+var calloutData = [];
 
 app.controller("guidedTours", function($scope, $http, $uibModal){
 
@@ -396,5 +397,128 @@ app.controller("setSurveyController", function($scope, $http, $uibModalInstance)
 
 });
 
+app.controller("mcsController", function($scope, $http, $uibModal){
 
+	$scope.messagePublishFlag = true;
+	$scope.surveyPublishFlag = true;
+
+	$scope.saveMessage = function() {
+		var temp = {
+			"message":$scope.message
+		};
+
+		messageData.push(temp);
+
+		console.log(messageData);
+
+		$scope.messagePublishFlag = false;
+	}
+
+	$scope.saveSurvey = function(argument) {
+		surveyData = {
+			"title":$scope.title,
+			"fieldName" : $scope.fieldName,
+			"timeDuration":$scope.timeDuration
+		};
+
+		$scope.surveyPublishFlag = false;
+	}
+
+	$scope.publishMessage = function() {
+		console.log("messageData @ publish "+messageData);
+
+ 		
+		$http.post("/setMessage", {"messageData":messageData}).
+		then(function(response) {
+
+			console.log("success");
+			
+			downloadURL = response.data.result;
+
+			 var modalInstance = $uibModal.open({
+ 			 animation : true,
+		     templateUrl: './views/downloadMessageScript.ejs',
+	      	 size: "md",
+	      	 controller:'DownloadModalController',
+	      	 backdrop : true
+	      	 
+	    });
+
+	     modalInstance.result.then(function (userData) {
+		     
+		    }, function (err) {
+		      
+			});
+		});
+	}
+
+	$scope.publishSurvey = function() {
+		console.log("surveyData @ publish "+surveyData);
+
+		$http.post("/setSurvey", {"surveyData":surveyData}).
+		then(function(response) {
+
+			console.log("success");
+			
+			downloadURL = response.data.result;
+
+			 var modalInstance = $uibModal.open({
+ 			 animation : true,
+		     templateUrl: './views/downloadSurveyScript.ejs',
+	      	 size: "md",
+	      	 controller:'DownloadModalController',
+	      	 backdrop : true
+	      	 
+	    });
+
+	     modalInstance.result.then(function (userData) {
+		     
+		    }, function (err) {
+		      
+			});
+		});	
+	}
+
+
+
+	$scope.saveCallout = function(argument) {
+		calloutData = {
+			"fieldName" : $scope.surveyfieldName
+		};
+
+		$scope.surveyPublishFlag = false;
+	}
+
+	$scope.publishCallout = function() {
+		console.log("messageData @ publish "+messageData);
+
+ 		
+		$http.post("/saveCallout", {"calloutData":calloutData}).
+		then(function(response) {
+
+			console.log("success");
+			
+			downloadURL = response.data.result;
+
+			 var modalInstance = $uibModal.open({
+ 			 animation : true,
+		     templateUrl: './views/downloadCalloutScript.ejs',
+	      	 size: "md",
+	      	 controller:'DownloadModalController',
+	      	 backdrop : true
+	      	 
+	    });
+
+	     modalInstance.result.then(function (userData) {
+		     
+		    }, function (err) {
+		      
+			});
+		});
+	}
+
+
+
+
+});
 

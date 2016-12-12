@@ -9,7 +9,7 @@ exports.loadHomePage = function(req,res)
 		console.log("Inside Webshot module");
 	});*/
 
-	res.render('home_page', { title: 'Message' });
+	res.render('HomePage', { title: 'Message' });
 
 };
 
