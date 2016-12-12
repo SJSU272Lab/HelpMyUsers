@@ -9,7 +9,7 @@ exports.loadHomePage = function(req,res)
 		console.log("Inside Webshot module");
 	});*/
 
-	res.render('GuidedTours', { title: 'Message' });
+	res.render('Survey', { title: 'Message' });
 
 };
 

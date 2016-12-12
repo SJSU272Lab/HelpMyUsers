@@ -12,6 +12,8 @@ var mainLogic = require('./routes/mainLogic');
 var analytics = require('./routes/analytics');
 
 var guidedTours = require('./routes/guidedTours');
+var message = require('./routes/message');
+var survey = require('./routes/survey');
 
 var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
 
@@ -43,6 +45,8 @@ app.post('/clicksData', analytics.fetchClicksData);
 app.post('/captureClick', analytics.captureClicksData);
 app.post('/loadURL', guidedTours.loadImage);
 app.post('/publishGuidedTour', guidedTours.publishGuidedTour);
+app.post('/setMessage', message.setMessage);
+app.post('/setSurvey', survey.setSurvey);
 
 mongo.connect(mongoConnectURL, function(){
   console.log('Connected to mongo at: ' + mongoConnectURL);

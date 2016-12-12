@@ -16,22 +16,16 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="vexjq/vex_all.css" />
-        <script type="text/javascript" src="vexjq/vex.combined.js"></script>
-        <script type="text/javascript" src="DownloadScripts/messagetemp.js"></script>
+        <!-- <script type="text/javascript" src="vexjq/vex.combined.js"></script> -->
+        <script type="text/javascript" src="DownloadScripts/surveytemp.js"></script>
    
   </head>
   
-  <body ng-app="helpmyusers" ng-controller="messageController">
-
- <!--  <script>
-    survey();
-
-  </script> -->
- 
+  <body ng-app="helpmyusers" ng-controller="surveyController">
   
-  <input class = "btn btn-success" type="button" name="messageButton" value = "Enter Message" ng-click = "setMessage()">
+  <input class = 'btn btn-success' type='button' name='surveyDetails' value = 'Survey Details' ng-click = 'setSurvey()'>
 
-  <input class = "btn btn-success" type="button" name="messageButton" value = "Publish" ng-click = "publishMessage()">
+  <input class = 'btn btn-success' type='button' name='publishDetails' value = 'Publish' ng-click = 'publishSurvey()'>
 
 
   <!-- <div ng-repeat="m in messageData track by $index">

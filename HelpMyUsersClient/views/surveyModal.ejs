@@ -1,0 +1,17 @@
+<div class="modal-body" id="modal-body">
+
+   <div class="login-form">
+   		<form name="loginForm" novalidate>
+
+            <input name = "title" ng-model = "title" type="text"  placeholder="Survey Title" required>
+
+            <input name = "fieldNames" ng-model = "fieldName" type="text"  placeholder="Field Names(Comma Separated)" required>
+
+            <input name = "timeDuration" ng-model = "timeDuration" type="text" placeholder = "Time interval in ms" required>
+   			
+   			<button class="modal-btn-primary" ng-click="add();">Save</button>
+            
+   		</form>
+   		
+   </div>
+</div>
