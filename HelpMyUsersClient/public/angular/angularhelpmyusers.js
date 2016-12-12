@@ -51,12 +51,15 @@ app.controller('analytics', function($scope, $http) {
 		}).success(function(details) {
 		
 				console.log(details);
+				console.log(details.length);
+				console.log(details[0].page_clicks);
+				console.log(details[0].page_clicks[0].id_name);
 
 				var valueArray = [];
 
-				for(var i = 0 ; i < details.length ; i ++)
+				for(var i = 0 ; i < details[0].page_clicks.length ; i ++)
 				{
-					valueArray.push({"label" : details[i].field_name, "value" : details[i].click_count});
+					valueArray.push({"label" : details[0].page_clicks[i].id_name, "value" : details[0].page_clicks[i].click_count});
 				}
 
 				console.log("value array "+valueArray);

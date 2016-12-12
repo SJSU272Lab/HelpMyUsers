@@ -1,10 +1,14 @@
 window.onload = function(){ 
         var clickId = 0;
+        var ownerID = "pavanshah77@gmail.com";
+        var arrayID = ['demoRequest', 'freeTrial', 'guidedTours', 'message', 'surveys', 'callouts'];
         var inputFlag = 0;
 
-        $('input').click(function() {
-          switch( $(this).attr('id') ){
-            case 'demoRequest' :
+        $('input').click(function() 
+        {
+          switch( $(this).attr('id') )
+          {
+            case arrayID[0] :
                 clickId = $(this).attr('id');
                 inputFlag = 1;
                 break;
@@ -35,7 +39,7 @@ window.onload = function(){
                 {
                     inputFlag = 0;
                     var http = new XMLHttpRequest();
-                    var params = JSON.stringify({ clickId: clickId });
+                    var params = JSON.stringify({ clickId: clickId , ownerID : ownerID});
                     http.open("POST", '/captureClick', true);
 
                     http.setRequestHeader("Content-type", "application/json; charset=utf-8");
