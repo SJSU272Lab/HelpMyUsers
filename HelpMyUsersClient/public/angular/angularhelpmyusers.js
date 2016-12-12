@@ -78,8 +78,9 @@ var downloadURL="";
 
 app.controller("guidedTours", function($scope, $http, $uibModal){
 
-	//$scope.imagePath = "google.com.png";
-
+	$scope.publishFlag = true;
+	$scope.imagePath = "/images/noImage.jpg";
+	$scope.imgFlag = true;
 	$scope.loadURL = function() {
 		console.log("ljsbdgs"+$scope.url);
 		console.log("in angular");
@@ -87,6 +88,7 @@ app.controller("guidedTours", function($scope, $http, $uibModal){
 		then(function(response) {
 			console.log(""+response.data);
 			$scope.imagePath = response.data.result;
+			$scope.imgFlag = false;
 		});
 	}
 
@@ -119,6 +121,10 @@ app.controller("guidedTours", function($scope, $http, $uibModal){
 
 	var init = function() {
 		$scope.guidedTourData = guidedTourData;
+		if(guidedTourData.length > 0)
+		{
+			$scope.publishFlag=false;
+		}
 	}
 	init();
 
