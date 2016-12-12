@@ -20,6 +20,7 @@ var login = require('./routes/login');
 
 var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
 
+
 var app = express();
 
 app.use(expressSession({
@@ -62,7 +63,7 @@ app.post('/publishGuidedTour', guidedTours.publishGuidedTour);
 app.post('/setMessage', message.setMessage);
 app.post('/setSurvey', survey.setSurvey);
 app.post('/login',login.login);
-app.post('/login',login.signUp);
+app.post('/signUp',login.signUp);
 
 app.get('/guidedTours', function(req,res) {
 		res.render('GuidedTour', { title: 'Message' });
