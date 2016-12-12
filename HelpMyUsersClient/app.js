@@ -61,6 +61,14 @@ app.get('/surveys', function(req,res) {
 		res.render('Survey', { title: 'Message' });
 });
 
+app.get('/test', function(req,res) {
+    res.render('test', { title: 'Message' });
+});
+
+app.get('/dashBoard', function(req,res) {
+    res.render('dashBoard', { title: 'Message' });
+});
+
 mongo.connect(mongoConnectURL, function(){
   console.log('Connected to mongo at: ' + mongoConnectURL);
 /*  http.createServer(app).listen(app.get('port'), function(){
