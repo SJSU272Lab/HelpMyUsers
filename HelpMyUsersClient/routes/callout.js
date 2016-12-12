@@ -20,8 +20,8 @@ console.log("sessionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"+req.session.
 
 	var initial = "window.onload = function(){"+
         "var clickId = 0;"+
-        /*"var ownerID = \""+req.session.username+"\";"+*/
-        "var ownerID = \""+"test"+"\";"+
+        "var ownerID = \""+req.session.username+"\";"+
+        /*"var ownerID = \""+"test"+"\";"+*/
         "var arrayID = ["+temp+"];"+
         "var inputFlag = 0;"+
         "$('input').click(function() "+
@@ -46,7 +46,7 @@ console.log("sessionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"+req.session.
                     "inputFlag = 0;"+
                     "var http = new XMLHttpRequest();"+
                     "var params = JSON.stringify({ clickId: clickId , ownerID : ownerID});"+
-                    "http.open(\"POST\", '/captureClick', true);"+
+                    "http.open(\"POST\", 'http://localhost:6002/captureClick', true);"+
 
                     "http.setRequestHeader(\"Content-type\", \"application/json; charset=utf-8\");"+
                     "http.setRequestHeader(\"Content-length\", params.length);"+

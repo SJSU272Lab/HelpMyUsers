@@ -1,6 +1,6 @@
 var mongo = require("./mongo");
-var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
-
+/*var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";*/
+var mongoConnectURL = "mongodb://localhost:27017/helpmyusers";
 
 exports.captureClicksData = function(req, res)
 {
@@ -78,9 +78,11 @@ function updateClicks(req, res, page_clicks_array, owner_id)
 
 exports.fetchClicksData = function(req,res)
 {
-	var owner_id = "pavanshah77@gmail.com";
+	//var owner_id = "pavanshah77@gmail.com";
 
 	console.log("session username "+req.session.username);
+
+	var owner_id = req.session.username;
 
 	mongo.connect(mongoConnectURL, function(connection){
 		console.log("connection received "+connection);
@@ -110,9 +112,9 @@ exports.fetchClicksData = function(req,res)
 
 exports.getSurveyData = function(req, res) {
 	console.log("survey data");
-	
-	var owner_id = "test";	
-
+	console.log("sessiohobaivfxkha"+req.session.username);
+	var owner_id = req.session.username;	
+	console.log(owner_id);
 	mongo.connect(mongoConnectURL, function(connection){
 		console.log("connection received "+connection);
 		
@@ -121,8 +123,9 @@ exports.getSurveyData = function(req, res) {
 		
 		coll.find({email : owner_id}, {json : 1}).toArray(function(err, user){
 			
-			if (user) 
+			if (user != "") 
 			{
+				console.log("khgvjgjv"+user);
 				var ratingArray = [];
 				console.log("success");
 				console.log("survey data "+user);

@@ -2,7 +2,8 @@ var webshot = require('webshot');
 var fs = require('fs');
 
 var mongo = require("./mongo");
-var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
+/*var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";*/
+var mongoConnectURL = "mongodb://localhost:27017/helpmyusers";
 
 
 exports.saveSurvey = function(req, res) {
@@ -79,7 +80,7 @@ exports.setSurvey = function(req, res) {
 
 	//var inputParams = JSON.stringify({});
 
-    var jsonparams = "email:\"test\",";
+    var jsonparams = "email:\""+req.session.username+"\",";
     for(var j=0; j<surveyfieldArray.length ; j++)
     {
     	jsonparams = jsonparams +""+ surveyfieldArray[j] + ":data." + surveyfieldArray[j] ;
@@ -113,7 +114,7 @@ exports.setSurvey = function(req, res) {
     callback = callback + "makePOST(data); }}})}";
 
     var endappend = "function makePOST(data){var http = new XMLHttpRequest(); var params = JSON.stringify({ "+jsonparams+" });"+
-                    "http.open('POST', '/saveSurvey', true);"+
+                    "http.open('POST', 'http://localhost:6002/saveSurvey', true);"+
                     "http.setRequestHeader('Content-type', 'application/json; charset=utf-8');"+
                     "http.setRequestHeader('Content-length', params.length);"+
                     "http.setRequestHeader('Connection', 'close');"+
