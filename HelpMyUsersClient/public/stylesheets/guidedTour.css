@@ -1,0 +1,611 @@
+/* Artfully masterminded by ZURB */
+body {
+  position: relative;
+}
+
+#joyRideTipContent { display: none; }
+
+.joyRideTipContent { display: none; }
+
+/* Default styles for the container */
+.joyride-tip-guide {
+  position: absolute;
+  background: #000;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  color: #fff;
+  width: 300px;
+  z-index: 101;
+  top: 0; /* keeps the page from scrolling when calculating position */
+  left: 0;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: normal;
+     -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+}
+
+.joyride-content-wrapper {
+  padding: 10px 10px 15px 15px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  .joyride-tip-guide {
+    width: 95% !important;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    left: 2.5% !important;
+  }
+  .joyride-tip-guide-wrapper {
+    width: 100%;
+  }
+}
+
+
+/* Add a little css triangle pip, older browser just miss out on the fanciness of it */
+.joyride-tip-guide span.joyride-nub {
+  display: block;
+  position: absolute;
+  left: 22px;
+  width: 0;
+  height: 0;
+  border: solid 14px;
+  border: solid 14px;
+}
+
+.joyride-tip-guide span.joyride-nub.top {
+  /*
+  IE7/IE8 Don't support rgba so we set the fallback
+  border color here. However, IE7/IE8 are also buggy
+  in that the fallback color doesn't work for
+  border-bottom-color so here we set the border-color
+  and override the top,left,right colors below.
+  */
+  border-color: #000;
+  border-color: rgba(0,0,0,0.8);
+  border-top-color: transparent !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-width: 0;
+  top: -14px;
+  bottom: none;
+}
+
+.joyride-tip-guide span.joyride-nub.bottom {
+  /*
+  IE7/IE8 Don't support rgba so we set the fallback
+  border color here. However, IE7/IE8 are also buggy
+  in that the fallback color doesn't work for
+  border-top-color so here we set the border-color
+  and override the bottom,left,right colors below.
+  */
+  border-color: #000;
+  border-color: rgba(0,0,0,0.8) !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-width: 0;
+  bottom: -14px;
+  bottom: none;
+}
+
+.joyride-tip-guide span.joyride-nub.right {
+  border-color: #000;
+  border-color: rgba(0,0,0,0.8) !important;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-right-width: 0;
+  top: 22px;
+  bottom: none;
+  left: auto;
+  right: -14px;
+}
+
+.joyride-tip-guide span.joyride-nub.left {
+  border-color: #000;
+  border-color: rgba(0,0,0,0.8) !important;
+  border-top-color: transparent !important;
+  border-left-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-width: 0;
+  top: 22px;
+  left: -14px;
+  right: auto;
+  bottom: none;
+}
+
+.joyride-tip-guide span.joyride-nub.top-right {
+  border-color: #000;
+  border-color: rgba(0,0,0,0.8);
+  border-top-color: transparent !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-width: 0;
+  top: -14px;
+  bottom: none;
+  left: auto;
+  right: 28px;
+}
+
+/* Typography */
+.joyride-tip-guide h1,.joyride-tip-guide h2,.joyride-tip-guide h3,.joyride-tip-guide h4,.joyride-tip-guide h5,.joyride-tip-guide h6 {
+  line-height: 1.25;
+  margin: 0;
+  font-weight: bold;
+  color: #fff;
+}
+.joyride-tip-guide h1 { font-size: 30px; }
+.joyride-tip-guide h2 { font-size: 26px; }
+.joyride-tip-guide h3 { font-size: 22px; }
+.joyride-tip-guide h4 { font-size: 18px; }
+.joyride-tip-guide h5 { font-size: 16px; }
+.joyride-tip-guide h6 { font-size: 14px; }
+.joyride-tip-guide p {
+  margin: 0 0 18px 0;
+  font-size: 14px;
+  line-height: 18px;
+}
+.joyride-tip-guide a {
+  color: rgb(255,255,255);
+  text-decoration: none;
+  border-bottom: dotted 1px rgba(255,255,255,0.6);
+}
+.joyride-tip-guide a:hover {
+  color: rgba(255,255,255,0.8);
+  border-bottom: none;
+}
+
+/* Button Style */
+.joyride-tip-guide .joyride-next-tip {
+  width: auto;
+  padding: 6px 18px 4px;
+  font-size: 13px;
+  text-decoration: none;
+  color: rgb(255,255,255);
+  border: solid 1px rgb(0,60,180);
+  background: rgb(0,99,255);
+  background: -moz-linear-gradient(top, rgb(0,99,255) 0%, rgb(0,85,214) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(0,99,255)), color-stop(100%,rgb(0,85,214)));
+  background: -webkit-linear-gradient(top, rgb(0,99,255) 0%,rgb(0,85,214) 100%);
+  background: -o-linear-gradient(top, rgb(0,99,255) 0%,rgb(0,85,214) 100%);
+  background: -ms-linear-gradient(top, rgb(0,99,255) 0%,rgb(0,85,214) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0063ff', endColorstr='#0055d6',GradientType=0 );
+  background: linear-gradient(top, rgb(0,99,255) 0%,rgb(0,85,214) 100%);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.3) inset;
+     -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.3) inset;
+          box-shadow: 0px 1px 0px rgba(255,255,255,0.3) inset;
+}
+
+.joyride-next-tip:hover {
+  color: rgb(255,255,255) !important;
+  border: solid 1px rgb(0,60,180) !important;
+  background: rgb(43,128,255);
+  background: -moz-linear-gradient(top, rgb(43,128,255) 0%, rgb(29,102,211) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(43,128,255)), color-stop(100%,rgb(29,102,211)));
+  background: -webkit-linear-gradient(top, rgb(43,128,255) 0%,rgb(29,102,211) 100%);
+  background: -o-linear-gradient(top, rgb(43,128,255) 0%,rgb(29,102,211) 100%);
+  background: -ms-linear-gradient(top, rgb(43,128,255) 0%,rgb(29,102,211) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b80ff', endColorstr='#1d66d3',GradientType=0 );
+  background: linear-gradient(top, rgb(43,128,255) 0%,rgb(29,102,211) 100%);
+}
+
+.joyride-timer-indicator-wrap {
+  width: 50px;
+  height: 3px;
+  border: solid 1px rgba(255,255,255,0.1);
+  position: absolute;
+  right: 17px;
+  bottom: 16px;
+}
+.joyride-timer-indicator {
+  display: block;
+  width: 0;
+  height: inherit;
+  background: rgba(255,255,255,0.25);
+}
+
+.joyride-close-tip {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: rgba(255,255,255,0.4) !important;
+  text-decoration: none;
+  font-family: Verdana, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  border-bottom: none !important;
+}
+
+.joyride-close-tip:hover {
+  color: rgba(255,255,255,0.9) !important;
+}
+
+.joyride-modal-bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgb(0,0,0);
+  background: transparent;
+  background: rgba(0,0,0, 0.5);
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  z-index: 100;
+  display: none;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.joyride-expose-wrapper {
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 102;
+    -moz-box-shadow: 0px 0px 30px #ffffff;
+    -webkit-box-shadow: 0px 0px 30px #ffffff;
+    box-shadow: 0px 0px 30px #ffffff;
+}
+
+.joyride-expose-cover {
+    background: transparent;
+    position: absolute;
+    z-index: 10000;
+    top: 0px;
+    left: 0px;
+}
+
+
+
+
+
+/*//Demo style css*/
+
+
+/* These are just the demo styles and these can be removed and Orbit 
+will still work like a champ (except any content block needs a background which
+our demo gets from this sheet) */
+        
+/*  --------------------------------------------------
+  Global Reset & Standards
+  -------------------------------------------------- */
+  html, body { margin: 0; padding: 0; }
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, img, small, strike, strong, em, sub, sup, tt, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td, section { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; text-align: left; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  ol, ul { list-style: none; }
+
+
+  
+/* --------------------------------------------------
+  :: Grid
+  -------------------------------------------------- */
+
+  .container { padding: 40px 20px 0 20px; }
+  
+  .row { width: 100%; max-width: 940px; min-width: 727px; margin: 0 auto; }
+  /* To fix the grid into a certain size, set max-width to width */
+  .row .row { min-width: 0px; }
+  
+  .column, .columns { margin-left: 4.4%; float: left; min-height: 1px; position: relative; }
+  .column:first-child, .columns:first-child { margin-left: 0px; }
+  
+  .row .one.columns { width: 4.3%; }
+  .row .two.columns { width: 13%; }
+  .row .three.columns { width: 21.7%; }
+  .row .four.columns { width: 30.4%; }
+  .row .five.columns { width: 39.1%; }
+  .row .six.columns { width: 47.8%; }
+  .row .seven.columns { width: 56.5%; }
+  .row .eight.columns { width: 65.2%; }
+  .row .nine.columns { width: 73.9%; }
+  .row .ten.columns { width: 82.6%; }
+  .row .eleven.columns { width: 91.3%; }
+  .row .twelve.columns { width: 100%; }
+  
+  .row .offset-by-one   { margin-left: 8.7%;  }
+  .row .offset-by-two   { margin-left: 17.4%;  }
+  .row .offset-by-three   { margin-left: 26.1%;  }
+  .row .offset-by-four  { margin-left: 34.8%;  }
+  .row .offset-by-five  { margin-left: 43.5%;  }
+  .row .offset-by-six   { margin-left: 52.2%;  }
+  .row .offset-by-seven   { margin-left: 60.9%;  }
+  .row .offset-by-eight   { margin-left: 69.6%;  }
+  .row .offset-by-nine  { margin-left: 78.3%;  }
+  .row .offset-by-ten   { margin-left: 87%;  }
+  .row .offset-by-eleven  { margin-left: 95.7%;  }
+  
+  img, object, embed { max-width: 100%; }
+  img { -ms-interpolation-mode: bicubic; }
+    
+  
+  /* Clear the columns automagically */
+   .row:after, .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+   .row:last-child:after { content: ""; }
+   * html .row, * html .clearfix { height: 1%; }
+   .row, .clearfix { display: inline-block; }
+   .row, .clearfix { display: block; }
+
+
+
+  body { background: #fff; font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-size: 13px; line-height: 18px; text-shadow: 0 0 1px rgba(0,0,0,0.01); color: #555; }
+  
+  p {
+    line-height: 1.25;
+  }
+  
+  h1 {
+    font-weight: bold; 
+    color: #222;
+    font-size: 36px;
+    line-height: 1.5;
+  }
+  
+  h2 { 
+    font-weight: bold; 
+    color: #222;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+  
+  h3 { 
+    font-weight: bold; 
+    color: #222;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+  
+  h4 { 
+    font-weight: bold; 
+    color: #222;
+    font-size: 18px;
+    line-height: 1.25;
+  }
+    
+  h1 + a { 
+    color: #00baff;
+    text-decoration: none; 
+    font-weight: normal;
+    font-size: 20px;
+  }
+    
+  a:hover { text-decoration: underline; }
+  
+  hr {
+    margin: 20px 0;
+    border: solid 1px #ccc;
+    border-width: 1px 0 0 0;
+  }
+
+  #hidden{
+    display: none;
+  }
+  
+ 
+
+
+ /*//mobile css*/
+
+
+ /* --------------------------------------------------
+  :: Typography
+  -------------------------------------------------- */
+  
+  @media handheld, only screen and (max-width: 767px) {
+    h1 { font-size: 32px; font-size: 3.2rem; line-height: 1.3; }
+    h2 { font-size: 28px; font-size: 2.8rem; line-height: 1.3; }
+    h3 { font-size: 21px; font-size: 2.1rem; line-height: 1.3; }
+    h4 { font-size: 18px; font-size: 1.8rem; line-height: 1.2; }
+    h5 { font-size: 16px; font-size: 1.6rem; line-height: 1.2; }
+    h6 { font-size: 15px; font-size: 1.5rem; line-height: 1.2; }
+    body, p {  font-size: 15px; font-size: 1.5rem; line-height: 1.4; }
+  }
+
+
+/* --------------------------------------------------
+  :: Grid
+  -------------------------------------------------- */
+  
+  /* Mobile */
+  @media only screen and (max-width: 767px) {   
+    body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; width: 100%; min-width: 0; margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
+    .container { min-width: 0; margin-left: 0; margin-right: 0; }
+    .row { width: 100%; min-width: 0; margin-left: 0; margin-right: 0; }
+    .row .row .column, .row .row .columns { padding: 0; }
+    .column, .columns { width: auto !important; float: none; margin-left: 0; margin-right: 0; }
+    .column:last-child, .columns:last-child { margin-right: 0; float: none; }
+    [class*="column"] + [class*="column"]:last-child { float: none; }
+    [class*="column"]:before, [class*="column"]:after { content:""; display:table; }
+    [class*="column"]:after { clear: both; }
+    
+    .offset-by-one, .offset-by-two, .offset-by-three, .offset-by-four, .offset-by-five, .offset-by-six, .offset-by-seven, .offset-by-eight, .offset-by-nine, .offset-by-ten, .offset-by-eleven, .centered { margin-left: 0 !important; }
+    
+    .push-two, .push-three, .push-four, .push-five, .push-six, .push-seven, .push-eight, .push-nine, .push-ten { left: auto; }
+    .pull-two, .pull-three, .pull-four, .pull-five, .pull-six, .pull-seven, .pull-eight, .pull-nine, .pull-ten { right: auto; }
+    
+    /* Mobile 4-column Grid */
+    .row .phone-one:first-child, .row .phone-two:first-child, .row .phone-three:first-child, .row .phone-four:first-child { margin-left: 0; }
+    .row .phone-one:last-child, .row .phone-two:last-child, .row .phone-three:last-child, .row .phone-four:last-child { float: right; }
+    
+    .row .phone-one, .row .phone-two, .row .phone-three, .row .phone-four { margin-left: 4.4%; float: left; min-height: 1px; position: relative; padding: 0; }
+    
+    .row .phone-one   { width: 21.68% !important; }
+    .row .phone-two   { width: 47.8% !important; }
+    .row .phone-three   { width: 73.9% !important; }
+    .row .phone-four  { width: 100% !important; }
+    
+    .row .push-one-phone { left: 26.08%; }
+    .row .push-two-phone { left: 52.2% }
+    .row .push-three-phone { left: 78.3% }
+    
+    .row .pull-one-phone { right: 26.08% }
+    .row .pull-two-phone { right: 52.2% }
+    .row .pull-three-phone { right: 78.3%; }
+    
+    #hidden{
+      display: block;
+    }
+    
+  }
+  
+  
+/* --------------------------------------------------
+  :: Block Grids
+  -------------------------------------------------- */ 
+  
+  @media only screen and (max-width: 767px) {
+    .block-grid.mobile { margin-left: 0; }
+    .block-grid.mobile > li { float: none; width: 100%; margin-left: 0; }
+  }
+  
+  
+
+/* -------------------------------------------------- 
+  :: Mobile Visibility Affordances
+---------------------------------------------------*/
+  
+  
+  .show-on-phones { display: none !important; } 
+  .show-on-tablets { display: none !important; }
+  .show-on-desktops { display: block !important; }
+  
+  .hide-on-phones { display: block !important; }  
+  .hide-on-tablets { display: block !important; }
+  .hide-on-desktops { display: none !important; }
+  
+  
+  /* Modernizr-enabled tablet targeting */
+  @media only screen and (max-width: 1280px) and (min-width: 768px) {
+    .touch .hide-on-phones { display: block !important; }
+    .touch .hide-on-tablets { display: none !important; }
+    .touch .hide-on-desktops { display: block !important; }
+    
+    .touch .show-on-phones { display: none !important; }
+    .touch .show-on-tablets { display: block !important; }
+    .touch .show-on-desktops { display: none !important; }
+  }
+  
+    
+  @media only screen and (max-width: 767px) {
+    .hide-on-phones { display: none !important; }
+    .hide-on-tablets { display: block !important; }
+    .hide-on-desktops { display: block !important; }
+    
+    .show-on-phones { display: block !important; }
+    .show-on-tablets { display: none !important; }
+    .show-on-desktops { display: none !important; }
+  }
+  
+  
+  /* Specific overrides for elements that require something other than display: block */
+  
+  table.show-on-desktops { display: table !important; }
+  table.hide-on-phones { display: table !important; } 
+  table.hide-on-tablets { display: table !important; }
+  
+  @media only screen and (max-width: 1280px) and (min-width: 768px) {
+    .touch table.hide-on-phones { display: table !important; }
+    .touch table.hide-on-desktops { display: table !important; }
+    .touch table.show-on-tablets { display: table !important; }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    table.hide-on-tablets { display: table !important; }
+    table.hide-on-desktops { display: table !important; }
+    table.show-on-phones { display: table !important; }
+  }
+  
+  
+/* -------------------------------------------------- 
+  :: Forms
+---------------------------------------------------*/ 
+
+
+  @media only screen and (max-width: 767px) {
+    div.form-field input, div.form-field input.small, div.form-field input.medium, div.form-field input.large, div.form-field input.oversize, input.input-text, input.input-text.oversize, textarea,
+    form.nice div.form-field input, form.nice div.form-field input.oversize, form.nice input.input-text, form.nice input.input-text.oversize, form.nice textarea { display: block; width: 100%; padding: 6px 2% 4px; font-size: 18px; }
+    form.nice div.form-field input, form.nice div.form-field input.oversize, form.nice input.input-text, form.nice input.input-text.oversize, form.nice textarea { -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+    form.nice div.form-field.error small, form.nice small.error { padding: 6px 2%; display: block; }
+    form.nice div.form-field.error .small + small, form.nice .small + .error { width: auto; }
+    form.nice div.form-field.error .medium + small, form.nice .medium + .error { width: auto; }
+    form.nice div.form-field.error .large + small, form.nice .large + .error { width: auto; }
+    form.nice div.form-field.error .expand + small, form.nice .expand + .error { width: auto; }
+  }
+  
+  
+/* -------------------------------------------------- 
+  :: UI
+---------------------------------------------------*/ 
+  
+  /* Buttons */
+  @media only screen and (max-width: 767px) {
+    .button { display: block; }
+    button.button, input[type="submit"].button { width: 100%; padding-left: 0; padding-right: 0; margin-bottom: 5px; }
+  }
+  
+  /* Tabs */
+  
+  @media only screen and (max-width: 767px) {
+    dl.tabs.mobile, dl.nice.tabs.mobile { width: auto; margin: 20px -20px 40px; height: auto; }
+    dl.tabs.mobile dt, dl.tabs.mobile dd, dl.nice.tabs.mobile dt, dl.nice.tabs.mobile dd { float: none; height: auto; }
+
+    dl.tabs.mobile dd a { display: block; width: auto; height: auto; padding: 18px 20px; line-height: 1; border: solid 0 #ccc; border-width: 1px 0 0; margin: 0; color: #555; background: #eee; font-size: 15px; font-size: 1.5rem; }
+    dl.tabs.mobile dd a.active { height: auto; margin: 0; border-width: 1px 0 0; }
+  
+    .nice.tabs.mobile { border-bottom: solid 1px #ccc; height: auto; }
+    .nice.tabs.mobile dd a { padding: 18px 20px; border: none; border-left: none; border-right: none; border-top: 1px solid #ccc; background: #fff; }
+    .nice.tabs.mobile dd a.active { border: none; background: #00a6fc; color: #fff; margin: 0; position: static; top: 0; height: auto; }
+    .nice.tabs.mobile dd:first-child a.active { margin: 0; }
+    
+    dl.contained.mobile, dl.nice.contained.mobile { margin-bottom: 0; }
+    dl.contained.tabs.mobile dd a { padding: 18px 20px; }
+    dl.nice.contained.tabs.mobile dd a { padding: 18px 20px; }
+    
+    dl.tabs.mobile + ul.contained { margin-left: -20px; margin-right: -20px; border-width: 0 0 1px 0; }
+  }
+  
+  /* Nav Bar */
+
+  @media only screen and (max-width: 767px) {
+    .nav-bar { height: auto; }
+    .nav-bar>li { float: none; display: block; border-right: none; }
+    .nav-bar>li>a.main { text-align: left; border-top: 1px solid #ddd; border-right: none; }
+    .nav-bar>li:first-child>a.main { border-top: none; }
+    .nav-bar>li.has-flyout>a.flyout-toggle { position: absolute; right: 0; top: 0; padding: 22px; z-index: 2; border-left: 1px dashed #eee; display: block; }
+    .nav-bar>li.has-flyout>a.flyout-toggle span { content: ""; width: 0; height: 0; border-left: 4px solid transparent;border-right: 4px solid transparent; border-top: 4px solid #2a85e8; display: block; }
+    .nav-bar>li.has-flyout>a.flyout-toggle:hover span { border-top-color: #141414; }
+    
+    .flyout { position: relative; width: auto; top: auto; margin-right: -2px; border-width: 1px 1px 0 1px; }
+    .flyout.right { float: none; right: auto; left: -1px; }
+    .flyout.small, .flyout.large { width: auto; }
+    .flyout p:last-child { margin-bottom: 18px; }
+  }
+
+
+  /* Tooltips */
+  @media only screen and (max-width: 767px) {
+    .tooltip {
+      font-size: 14px;
+      font-size: 1.4rem;
+      line-height: 1.4;
+      padding: 7px 10px 9px 10px;
+    }
+    .tooltip > .nub, .tooltip.top > .nub, .tooltip.left > .nub, .tooltip.right > .nub {
+      border-color: transparent transparent rgb(0,0,0) transparent;
+      border-color: transparent transparent rgba(0,0,0,0.85) transparent;
+      top: -12px;
+      left: 10px;
+    }
+  }
+  
+  
+  /* Video */
+  
+  @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+    .flex-video { padding-top: 0; }
+  }
