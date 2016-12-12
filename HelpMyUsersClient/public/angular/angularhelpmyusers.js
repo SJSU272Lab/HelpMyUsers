@@ -401,6 +401,10 @@ app.controller("mcsController", function($scope, $http, $uibModal){
 
 	$scope.messagePublishFlag = true;
 	$scope.surveyPublishFlag = true;
+	$scope.calloutPublishFlag = true;
+	$scope.calloutsuccess = false;
+	$scope.surveysuccess = false;
+	$scope.messagesuccess = false;
 
 	$scope.saveMessage = function() {
 		var temp = {
@@ -412,6 +416,8 @@ app.controller("mcsController", function($scope, $http, $uibModal){
 		console.log(messageData);
 
 		$scope.messagePublishFlag = false;
+		$scope.messagesuccess = true;
+
 	}
 
 	$scope.saveSurvey = function(argument) {
@@ -422,6 +428,8 @@ app.controller("mcsController", function($scope, $http, $uibModal){
 		};
 
 		$scope.surveyPublishFlag = false;
+		$scope.surveysuccess = true;
+
 	}
 
 	$scope.publishMessage = function() {
@@ -486,7 +494,9 @@ app.controller("mcsController", function($scope, $http, $uibModal){
 			"fieldName" : $scope.surveyfieldName
 		};
 
-		$scope.surveyPublishFlag = false;
+		$scope.calloutPublishFlag = false;
+		$scope.calloutsuccess = true;
+
 	}
 
 	$scope.publishCallout = function() {

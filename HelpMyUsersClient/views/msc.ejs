@@ -117,9 +117,13 @@
                                         </div>
                                         <div class="span-form">
                                             <input type="submit"  ng-click="publishMessage();" ng-disabled="messagePublishFlag" class="btn btn-block" value="Publish">
-                                        </div>
+                                        </div><br><br><br>
+                                        <div class="alert alert-success" ng-if="messagesuccess">
+                                              <strong>Saved!</strong> Please Publish
+                                            </div>
                                     </div>
                                 </div>
+                                <a class="nav-brand" href="/"><img src="../public/assets/images/logo.png" alt="gigninga" width="60" height="60" style="position: absolute;top: 0;left: 0;"></a>
                             </form>
                             </div>
 
@@ -148,6 +152,9 @@
                                             </div>
                                             <div class="span-form">
                                                 <input type="submit"  ng-click="publishSurvey();" ng-disabled="surveyPublishFlag" class="btn btn-block" value="Publish">
+                                            </div><br><br><br>
+                                            <div class="alert alert-success" ng-if="surveysuccess">
+                                              <strong>Saved!</strong> Please Publish
                                             </div>
                                         </div>
                                     </div>
@@ -173,7 +180,10 @@
                                                 <input type="submit"  ng-click="saveCallout();" class="btn btn-block" value="Save">
                                             </div>
                                             <div class="span-form">
-                                                <input type="submit"  ng-click="publishCallout();" class="btn btn-block" value="Publish">
+                                                <input type="submit"  ng-click="publishCallout();" ng-disabled="calloutPublishFlag" class="btn btn-block" value="Publish">
+                                            </div><br><br><br>
+                                            <div class="alert alert-success" ng-if="calloutsuccess">
+                                              <strong>Saved!</strong> Please Publish
                                             </div>
                                         </div>
                                     </div>
