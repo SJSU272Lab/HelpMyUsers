@@ -58,6 +58,8 @@ app.controller('LoginModalController', function($scope, $http, $uibModalInstance
 
 			console.log("response received "+response);
 
+			window.location.assign("/analytics");
+
 		});	
 
 	}
@@ -90,10 +92,12 @@ app.controller('SignupModalController', function($scope, $uibModalInstance, $htt
 
 app.controller('analytics', function($scope, $http) {
 
+	var lessSeenData = [];
+
 	$scope.clickCountOptions = {
     chart: {
         type: 'discreteBarChart',
-        height: 450,
+        height: 400,
         margin : {
             top: 20,
             right: 20,
@@ -146,6 +150,135 @@ app.controller('analytics', function($scope, $http) {
 	}
 
 	datafetch();
+
+
+	$scope.surveydonutOptions = {
+	            chart: {
+	                type: 'pieChart',
+	                height: 400,
+	                donut: true,
+	                x: function(d){return d.key;},
+	                y: function(d){return d.y;},
+	                showLabels: true,
+	                color : ["#1f77b4 ", "#ff7f0e ", "#2ca02c ", "#d62728 ", "#9467bd ", "#8c564b ", "#e377c2 ", "#7f7f7f ", "#bcbd22 ", "#17becf "],
+
+	                
+	                duration: 100,
+	                legend: {
+	                    margin: {
+	                        top: 0,
+	                        right: 0,
+	                        bottom: 0,
+	                        left: 0
+	                    }
+	                }
+	            }
+	        };
+
+
+	 var surveydonutData = function(){
+	 	
+	 	$http({
+			method : "POST",
+			url : '/surveyData'
+		}).success(function(details) {
+		
+			console.log("survey data "+details);
+			var array1 = 0 ;
+			var array2 = 0;
+			var array3 = 0;
+			var array4 = 0;
+			var array5 = 0;
+
+			for(var i = 0 ; i < details.length ; i++)
+			{
+				if(details[i] == 1)
+					array1++;
+				else if(details[i] == 2)
+					array2++;
+				else if(details[i] == 3)
+					array3++;
+				else if(details[i] == 4)
+					array4++;
+				else if(details[i] == 5)
+					array5++;
+			}
+				
+				
+				$scope.donutData = [
+	    		
+				        { key : "1" , y : array1 },
+				        { key : "2" , y : array2 },
+				        { key : "3" , y : array3 },
+				        { key : "4" , y : array4 },
+				        { key : "5" , y : array5 }
+	    			];
+	    		
+	    });
+	 }
+
+	  surveydonutData();
+
+
+	  $scope.websitedonutOptions = {
+
+	  	chart: {
+	                type: 'pieChart',
+	                height: 400,
+	                donut: true,
+	                x: function(d){return d.key;},
+	                y: function(d){return d.y;},
+	                showLabels: true,
+	                color : ["#8c564b ", "#e377c2 ", "#7f7f7f ", "#bcbd22 ", "#17becf ","#1f77b4 ", "#ff7f0e ", "#2ca02c ", "#d62728 ", "#9467bd "],
+
+	                
+	                duration: 100,
+	                legend: {
+	                    margin: {
+	                        top: 0,
+	                        right: 0,
+	                        bottom: 0,
+	                        left: 0
+	                    }
+	                }
+	            }
+	  }
+
+
+
+	  var donutDatafetch = function()
+	{
+		$http({
+			method : "POST",
+			url : '/clicksData'
+		}).success(function(details) {
+
+				var valueArray = [];
+				var total = 0;
+
+				for(var i = 0 ; i < details[0].page_clicks.length ; i ++)
+				{
+					total = total + details[0].page_clicks[i].click_count;
+				}
+
+				console.log("total "+total);
+
+				for(var i = 0 ; i < details[0].page_clicks.length ; i ++)
+				{
+					valueArray.push({"key" : details[0].page_clicks[i].id_name, "y" : total - details[0].page_clicks[i].click_count});
+				}
+
+				console.log("donut value array "+valueArray);
+
+				$scope.websiteDonutData = valueArray;
+		});
+	}
+
+	donutDatafetch();
+
+
+
+
 
 
 });
