@@ -1,0 +1,26 @@
+<!-- 
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+</div> -->
+<div class="modal-body" id="modal-body">
+
+   <div class="login-form">
+   		<form name="loginForm" novalidate>
+   			<input type="email" name = "email" ng-model="email" class="email" placeholder="Email Address" required>
+   				
+   			<input name = "password" ng-model = "password" type="password" class="pwd" placeholder="Password" required>
+   			
+   			<div class="remember-forgot">
+   				<label for="rememberme" class="remember-checkbox">
+			        <input type="checkbox" id="rememberme" name="rememberme" >
+			        Remember me
+			    </label>
+			    <a href="#." class="forgot-link pull-right">Forgot password?</a>
+   			</div>
+   			<button class="modal-btn-primary" ng-click="ok()">Log in</button>
+   		</form>
+   </div>
+</div>
+<!-- <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>      
+</div> -->

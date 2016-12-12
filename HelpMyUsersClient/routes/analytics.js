@@ -79,6 +79,9 @@ function updateClicks(req, res, page_clicks_array, owner_id)
 exports.fetchClicksData = function(req,res)
 {
 	var owner_id = "pavanshah77@gmail.com";
+
+	console.log("session username "+req.session.username);
+
 	mongo.connect(mongoConnectURL, function(connection){
 		console.log("connection received "+connection);
 		

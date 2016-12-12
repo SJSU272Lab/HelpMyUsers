@@ -11,6 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
+    <link href="../public/stylesheets/modal.css" rel="stylesheet">
+
     <!-- Bootstrap -->
     <link href="../public/assets/css/bootstrap.css" rel="stylesheet">
 
@@ -172,7 +174,8 @@
                             </ul>
                             -->
                             <div class="download-block text-center">
-                                <a href="" class="btn-download">Sign In</a><a href="" class="btn-download">Sign Up</a>
+                                <a href="" class="btn-download" ng-click = "openLoginModal()">Sign In</a>
+                                <a href="" class="btn-download" ng-click = "openSignupModal()">Sign Up</a>
                             </div>
                         </div>
                     </div>
