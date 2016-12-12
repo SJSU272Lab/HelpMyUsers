@@ -62,8 +62,12 @@ app.post('/loadURL', guidedTours.loadImage);
 app.post('/publishGuidedTour', guidedTours.publishGuidedTour);
 app.post('/setMessage', message.setMessage);
 app.post('/setSurvey', survey.setSurvey);
+
 app.post('/login',login.login);
 app.post('/signUp',login.signUp);
+
+app.post('/saveSurvey', survey.saveSurvey);
+
 
 app.get('/guidedTours', function(req,res) {
 		res.render('GuidedTour', { title: 'Message' });
@@ -75,6 +79,14 @@ app.get('/messages', function(req,res) {
 
 app.get('/surveys', function(req,res) {
 		res.render('Survey', { title: 'Message' });
+});
+
+app.get('/test', function(req,res) {
+    res.render('test', { title: 'Message' });
+});
+
+app.get('/dashBoard', function(req,res) {
+    res.render('dashBoard', { title: 'Message' });
 });
 
 mongo.connect(mongoConnectURL, function(){
