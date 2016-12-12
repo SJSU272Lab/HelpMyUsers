@@ -3,7 +3,7 @@ var fs = require('fs');
 
 exports.saveCallout = function(req, res) {
 
-
+console.log("sessionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"+req.session.username);
 
 	//var surveyTitle = req.body.surveyData.title;
 	console.log(req.body.calloutData.fieldName);

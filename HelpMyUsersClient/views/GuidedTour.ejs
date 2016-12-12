@@ -147,6 +147,7 @@
                         <form class="form-horizontal" >
                                 <div class="col-md-5 text-center" >
                         <!--<span class="sub-head">we are here</span>-->
+                        <a class="nav-brand" href="/dashboard"><img src="../public/assets/images/logo.png" alt="gigninga" width="60" height="60" style="position: absolute;top: 0;left: 15px;"></a>
                                 <div class="title">
                                     <h2>guided tours</h2>
                                 </div>
@@ -182,7 +183,11 @@
                         </div>
                     </div>
                     <div class="col-md-2">
+                    <div class="form-group" style="padding-top: 8px; padding-right: 6px;">
+                                    <input type="submit" ng-disabled="guidedTourData.length<=0" ng-click="publish();" class="btn btn-block" value="Publish">
+                                </div>
                     <label>Sequence of your TOUR:</label>
+
                         <div >
                             <table class="table table-bordered" ng-repeat="tours in guidedTourData track by $index" style="table-layout: fixed;">
                                 <tr>
@@ -198,9 +203,7 @@
 
                             </table>
                         </div>
-                                <div class="form-group" style="padding-top: 8px; padding-right: 6px;">
-                                    <input type="submit" ng-disabled="guidedTourData.length<=0" ng-click="publish();" class="btn btn-block" value="Publish">
-                                </div>
+                                
                     </div>
                 </div>
             </div>
