@@ -87,8 +87,8 @@ app.get('/surveys', function(req,res) {
 		res.render('Survey', { title: 'Message' });
 });
 
-app.get('/test', function(req,res) {
-    res.render('test', { title: 'Message' });
+app.get('/msc', function(req,res) {
+    res.render('msc', { title: 'Message' });
 });
 
 app.get('/dashBoard', function(req,res) {
