@@ -44,6 +44,7 @@ app.controller('helpmyusers', function($scope, $http, $uibModal) {
 
 app.controller('LoginModalController', function($scope, $http, $uibModalInstance){
 
+
 	$scope.ok = function()
 	{
 		var username = $scope.email;
@@ -57,8 +58,10 @@ app.controller('LoginModalController', function($scope, $http, $uibModalInstance
 		then(function(response) {
 
 			console.log("response received "+response);
-
+		if(response.status == 200)
 			window.location.assign("/analytics");
+		else
+			alert("Invalid Username/Password");
 
 		});	
 

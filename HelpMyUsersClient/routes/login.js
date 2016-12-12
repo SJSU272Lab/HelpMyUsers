@@ -1,5 +1,8 @@
 var mongo = require("./mongo");
-var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
+/*var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";*/
+
+var mongoConnectURL = "mongodb://localhost:27017/helpmyusers";
+
 
 
 exports.login = function(req, res)
@@ -14,7 +17,7 @@ exports.login = function(req, res)
 		
 		console.log('Connected to mongo at: ' + mongoConnectURL);
 		var coll = mongo.collection('usercollection');		//collection data in coll
-		
+		console.log(coll);
 		coll.findOne({username : username, password : password}, function(err, user){
 			
 			if (user) 
@@ -24,13 +27,14 @@ exports.login = function(req, res)
 				req.session.username = username;
 				console.log(req.session.username);
 				console.log(username);
-				res.send(user);
+				res.status(200).send(user);
 
 			} 
 			
 			else 
 			{
 				console.log("failure");
+				res.status(401).send();
 			}
 		});
 	});
