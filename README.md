@@ -54,3 +54,7 @@ Helpmyusers changes the way of engagement with your customers and guide each use
 ![2016-12-12 17](https://cloud.githubusercontent.com/assets/21249433/21160175/b5d70e82-c138-11e6-8e6b-fcc5ed1c6c2c.png)
 ![2016-12-12 18](https://cloud.githubusercontent.com/assets/21249433/21160176/b5da180c-c138-11e6-94dd-95c7add2af93.png)
 ![2016-12-12 19](https://cloud.githubusercontent.com/assets/21249433/21160174/b5d4f46c-c138-11e6-8a4c-27c1ca9b64d4.png)
+
+# Credits
+1] Joyride jQuery plugin for Guided tours
+2] Vex modal dialogs for Messages, Surveys
