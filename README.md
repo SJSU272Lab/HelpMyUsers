@@ -18,17 +18,17 @@ Whenever, website owners need to send some promotional messages or conduct surve
 Helpmyusers changes the way of engagement with your customers and guide each user to success. By combining user intelligence and targeted engagements, HelpMyUsers will help you to deliver what each of your customers need to be successful at every moment so they will stay longer, spend more, and tell their friends and increase customer lifetime value.
 
 # Steps For Configuring Your Website with our HelpMyUsers -
-1] Clone this repository.
-2] before running app.js, run 'npm install' and 'bower install'.
-3] Run app.js
-4] Once the website is running, sign-up to create your own account.
-5] Sign-in with your credentials to head to your dashboard.
-6] On the dashboard, you will get a chance to create guided tours, messages, surveys and callouts for your website.
-7] For guided tours, provide 'ids' of the HTML elements of your website in a sequence of your expected guided tour.
-8] Follow the instructions provided on the website to configure messages, surveys and callouts.
-9] Once you are done, publish the changes and then you will get an option to download our javascript and css.
-10] Include path to these javascripts and css in your website.
-11] Enjoy the experience.
+1] Clone this repository.<br />
+2] before running app.js, run 'npm install' and 'bower install'.<br />
+3] Run app.js.<br />
+4] Once the website is running, sign-up to create your own account.<br />
+5] Sign-in with your credentials to head to your dashboard.<br />
+6] On the dashboard, you will get a chance to create guided tours, messages, surveys and callouts for your website.<br />
+7] For guided tours, provide 'ids' of the HTML elements of your website in a sequence of your expected guided tour.<br />
+8] Follow the instructions provided on the website to configure messages, surveys and callouts.<br />
+9] Once you are done, publish the changes and then you will get an option to download our javascript and css.<br />
+10] Include path to these javascripts and css in your website.<br />
+11] Enjoy the experience.<br />
 
 ![FlowChart](https://raw.githubusercontent.com/SJSU272Lab/Fall16-Team31/master/Flow%20Chart.jpg?raw=true "Interaction Diagram")
 
