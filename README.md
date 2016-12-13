@@ -19,8 +19,8 @@ Helpmyusers changes the way of engagement with your customers and guide each use
 
 # Steps For Configuring Your Website with our HelpMyUsers -
 1] Clone this repository.<br />
-2] before running app.js, run 'npm install' and 'bower install'.<br />
-3] Run app.js.<br />
+2] before running app.js, run -> 'npm install' and 'bower install' to install all dependencies.<br />
+3] Run app.js -> 'node app.js'<br />
 4] Once the website is running, sign-up to create your own account.<br />
 5] Sign-in with your credentials to head to your dashboard.<br />
 6] On the dashboard, you will get a chance to create guided tours, messages, surveys and callouts for your website.<br />
