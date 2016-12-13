@@ -1,0 +1,23 @@
+{
+  "name": "HelpMyUsersClient",
+  "description": "A sample nodejs app for Bluemix",
+  "main": "app.js",
+  "authors": [
+    "Vansh Zaveri <vanshzaveri93@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "home_page.ejs",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-nvd3": "^1.0.9",
+    "angular-bootstrap": "^2.3.1",
+    "nvd3": "^1.8.5"
+  }
+}

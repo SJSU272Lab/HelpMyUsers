@@ -1,6 +1,6 @@
 var mongo = require("./mongo");
-/*var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";*/
-var mongoConnectURL = "mongodb://localhost:27017/helpmyusers";
+var mongoConnectURL = "mongodb://pavanshah77:pavanshah77@ds129028.mlab.com:29028/helpmyusersdatabase";
+/*var mongoConnectURL = "mongodb://localhost:27017/helpmyusers";*/
 
 exports.captureClicksData = function(req, res)
 {
