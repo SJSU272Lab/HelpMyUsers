@@ -93,7 +93,44 @@ app.controller('SignupModalController', function($scope, $uibModalInstance, $htt
 
 });
 
-app.controller('analytics', function($scope, $http) {
+app.controller("CalloutModalController", function($http, $scope, $uibModal, $uibModalInstance) {
+		$scope.add = function() {
+		var temp = {
+			"id":$scope.id,
+			"header":$scope.header,
+			"message":$scope.message
+		};
+
+		calloutDashboardData.push(temp);
+
+		console.log(calloutDashboardData);
+		$uibModalInstance.close();
+
+		$http.post("/publishGuidedTour", {"tourData":calloutDashboardData}).
+		then(function(response) {
+
+			downloadURL = response.data.result;
+
+			 var modalInstance = $uibModal.open({
+ 			 animation : true,
+		     templateUrl: './views/downloadScript.ejs',
+	      	 size: "md",
+	      	 controller:'DownloadModalController',
+	      	 backdrop : true
+	    });
+
+	     modalInstance.result.then(function (userData) {
+
+		     
+		    }, function (err) {
+		      
+		});
+		});
+	}
+})
+
+
+app.controller('analytics', function($scope, $http, $uibModal) {
 
 	var lessSeenData = [];
 
@@ -122,6 +159,17 @@ app.controller('analytics', function($scope, $http) {
         }
     	}
 	};
+
+
+	$scope.setDashboardCallout = function() {
+		var modalInstance = $uibModal.open({
+ 			 animation : true,
+		     templateUrl: './views/SetCalloutModal.ejs',
+	      	 size: "md",
+	      	 controller:'CalloutModalController',
+	      	 backdrop : true
+	    });
+	}
 
 
 	var datafetch = function()
@@ -163,7 +211,7 @@ app.controller('analytics', function($scope, $http) {
 	                x: function(d){return d.key;},
 	                y: function(d){return d.y;},
 	                showLabels: true,
-	                color : ["#1f77b4 ", "#ff7f0e ", "#2ca02c ", "#d62728 ", "#9467bd ", "#8c564b ", "#e377c2 ", "#7f7f7f ", "#bcbd22 ", "#17becf "],
+	                color : ["#d62728 ", "#ff7f0e ", "#2ca02c ", "#d62728 ", "#9467bd ", "#8c564b ", "#e377c2 ", "#7f7f7f ", "#bcbd22 ", "#17becf "],
 
 	                
 	                duration: 100,
@@ -291,6 +339,7 @@ var downloadURL="";
 var messageData = [];
 var surveyData = [];
 var calloutData = [];
+var calloutDashboardData = [];
 
 app.controller("guidedTours", function($scope, $http, $uibModal){
 
@@ -563,7 +612,8 @@ app.controller("mcsController", function($scope, $http, $uibModal){
 
 	$scope.saveMessage = function() {
 		var temp = {
-			"message":$scope.message
+			"message":$scope.message,
+			"timeInterval":$scope.messageDuration
 		};
 
 		messageData.push(temp);
