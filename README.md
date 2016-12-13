@@ -31,3 +31,26 @@ Helpmyusers changes the way of engagement with your customers and guide each use
 11] Enjoy the experience.
 
 ![FlowChart](https://raw.githubusercontent.com/SJSU272Lab/Fall16-Team31/master/Flow%20Chart.jpg?raw=true "Interaction Diagram")
+
+
+# Screen-captures of our web-app -
+![2016-12-12 1](https://cloud.githubusercontent.com/assets/21249433/21160160/b594babe-c138-11e6-9f36-3869f2ae1cd1.png)
+![2016-12-12 2](https://cloud.githubusercontent.com/assets/21249433/21160162/b5958d54-c138-11e6-940b-4b313488ac2c.png)
+![2016-12-12 3](https://cloud.githubusercontent.com/assets/21249433/21160163/b593fdb8-c138-11e6-8e21-1e288e222442.png)
+![2016-12-12 4](https://cloud.githubusercontent.com/assets/21249433/21160159/b593b9c0-c138-11e6-911e-e7106d79181e.png)
+![2016-12-12 5](https://cloud.githubusercontent.com/assets/21249433/21160161/b594d0f8-c138-11e6-882d-20b8e371da06.png)
+![2016-12-12 6](https://cloud.githubusercontent.com/assets/21249433/21160158/b592a59e-c138-11e6-83e9-05f14fae7546.png)
+![2016-12-12 7](https://cloud.githubusercontent.com/assets/21249433/21160164/b5a98714-c138-11e6-9b9b-645427ab46eb.png)
+![2016-12-12 8](https://cloud.githubusercontent.com/assets/21249433/21160165/b5ab56e8-c138-11e6-8df1-6fc0e246ce0b.png)
+![2016-12-12 9](https://cloud.githubusercontent.com/assets/21249433/21160167/b5b2552e-c138-11e6-9f2d-00cd35ec901d.png)
+![2016-12-12 10](https://cloud.githubusercontent.com/assets/21249433/21160169/b5b7e6f6-c138-11e6-9a4a-cb83a478d602.png)
+![2016-12-12 11](https://cloud.githubusercontent.com/assets/21249433/21160166/b5b033c0-c138-11e6-82f9-b756fcf76b3b.png)
+![2016-12-12 12](https://cloud.githubusercontent.com/assets/21249433/21160168/b5b7a15a-c138-11e6-9b4d-64796e15c951.png)
+![2016-12-12 13](https://cloud.githubusercontent.com/assets/21249433/21160171/b5c3eb04-c138-11e6-9915-b38a73c84637.png)
+![2016-12-12 14](https://cloud.githubusercontent.com/assets/21249433/21160170/b5c2c5ee-c138-11e6-9c29-366d93895d24.png)
+![2016-12-12 15](https://cloud.githubusercontent.com/assets/21249433/21160173/b5d35602-c138-11e6-98ca-8b3341338001.png)
+![2016-12-12 16](https://cloud.githubusercontent.com/assets/21249433/21160172/b5d13548-c138-11e6-8f99-bd2ab9710be8.png)
+![2016-12-12 17](https://cloud.githubusercontent.com/assets/21249433/21160175/b5d70e82-c138-11e6-8e6b-fcc5ed1c6c2c.png)
+![2016-12-12 18](https://cloud.githubusercontent.com/assets/21249433/21160176/b5da180c-c138-11e6-94dd-95c7add2af93.png)
+![2016-12-12 19](https://cloud.githubusercontent.com/assets/21249433/21160174/b5d4f46c-c138-11e6-8a4c-27c1ca9b64d4.png)
+![2016-12-12](https://cloud.githubusercontent.com/assets/21249433/21160177/b5e07094-c138-11e6-9241-c5348730f762.png)
