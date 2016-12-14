@@ -18,22 +18,23 @@ Whenever, website owners need to send some promotional messages or conduct surve
 Helpmyusers changes the way of engagement with your customers and guide each user to success. By combining user intelligence and targeted engagements, HelpMyUsers will help you to deliver what each of your customers need to be successful at every moment so they will stay longer, spend more, and tell their friends and increase customer lifetime value.
 
 # Steps For Configuring Your Website with our HelpMyUsers -
-1] Clone this repository.
-2] before running app.js, run 'npm install' and 'bower install'.
-3] Run app.js
-4] Once the website is running, sign-up to create your own account.
-5] Sign-in with your credentials to head to your dashboard.
-6] On the dashboard, you will get a chance to create guided tours, messages, surveys and callouts for your website.
-7] For guided tours, provide 'ids' of the HTML elements of your website in a sequence of your expected guided tour.
-8] Follow the instructions provided on the website to configure messages, surveys and callouts.
-9] Once you are done, publish the changes and then you will get an option to download our javascript and css.
-10] Include path to these javascripts and css in your website.
-11] Enjoy the experience.
+1] Clone this repository.<br />
+2] before running app.js, run -> 'npm install' and 'bower install' to install all dependencies.<br />
+3] Run app.js -> 'node app.js'<br />
+4] Once the website is running, sign-up to create your own account.<br />
+5] Sign-in with your credentials to head to your dashboard.<br />
+6] On the dashboard, you will get a chance to create guided tours, messages, surveys and callouts for your website.<br />
+7] For guided tours, provide 'ids' of the HTML elements of your website in a sequence of your expected guided tour.<br />
+8] Follow the instructions provided on the website to configure messages, surveys and callouts.<br />
+9] Once you are done, publish the changes and then you will get an option to download our javascript and css.<br />
+10] Include path to these javascripts and css in your website.<br />
+11] Enjoy the experience.<br />
 
 ![FlowChart](https://raw.githubusercontent.com/SJSU272Lab/Fall16-Team31/master/Flow%20Chart.jpg?raw=true "Interaction Diagram")
 
 
 # Screen-captures of our web-app -
+![2016-12-12](https://cloud.githubusercontent.com/assets/21249433/21160177/b5e07094-c138-11e6-9241-c5348730f762.png)
 ![2016-12-12 1](https://cloud.githubusercontent.com/assets/21249433/21160160/b594babe-c138-11e6-9f36-3869f2ae1cd1.png)
 ![2016-12-12 2](https://cloud.githubusercontent.com/assets/21249433/21160162/b5958d54-c138-11e6-940b-4b313488ac2c.png)
 ![2016-12-12 3](https://cloud.githubusercontent.com/assets/21249433/21160163/b593fdb8-c138-11e6-8e21-1e288e222442.png)
@@ -53,4 +54,7 @@ Helpmyusers changes the way of engagement with your customers and guide each use
 ![2016-12-12 17](https://cloud.githubusercontent.com/assets/21249433/21160175/b5d70e82-c138-11e6-8e6b-fcc5ed1c6c2c.png)
 ![2016-12-12 18](https://cloud.githubusercontent.com/assets/21249433/21160176/b5da180c-c138-11e6-94dd-95c7add2af93.png)
 ![2016-12-12 19](https://cloud.githubusercontent.com/assets/21249433/21160174/b5d4f46c-c138-11e6-8a4c-27c1ca9b64d4.png)
-![2016-12-12](https://cloud.githubusercontent.com/assets/21249433/21160177/b5e07094-c138-11e6-9241-c5348730f762.png)
+
+# Credits
+1] Joyride jQuery plugin for Guided tours </br>
+2] Vex modal dialogs for Messages, Surveys
