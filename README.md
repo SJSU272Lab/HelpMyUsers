@@ -60,8 +60,8 @@ https://helpmyusers.mybluemix.net/
 ![2016-12-12 19](https://cloud.githubusercontent.com/assets/21249433/21160174/b5d4f46c-c138-11e6-8a4c-27c1ca9b64d4.png)
 
 # Credits
-1] Joyride jQuery plugin for Guided tours </br>
-2] Vex modal dialogs for Messages, Surveys
+1] Joyride jQuery for Guided tours' CSS </br>
+2] Vex modal dialogs for Messages and Surveys' CSS
 
 # About Us
 
